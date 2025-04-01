@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 // import Hero from "./components/Hero";
 // import OurInstitute from "./components/OurInstitute";
 // import OurInfrastructure from "./components/OurInfrastructure";
@@ -14,7 +14,7 @@ import Navbar from "../components/Navbar";
 export const Home =()=> {
   return (
     <div className="font-sans">
-      <Navbar />
+      <Header />
       {/* <Hero />
       <OurInstitute />
       <OurInfrastructure />

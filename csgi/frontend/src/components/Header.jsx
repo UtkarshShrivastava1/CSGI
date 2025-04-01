@@ -7,7 +7,7 @@ import Image3 from '../assets/ISO_logo.png';
 import Image4 from '../assets/CSVTU.png';
 import Image5 from '../assets/dataquest.png';
 
-const Navbar = () => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -86,4 +86,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
