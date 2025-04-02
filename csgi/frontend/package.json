@@ -11,9 +11,14 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.17",
+    "aos": "^2.3.4",
     "lucide-react": "^0.485.0",
     "react": "^19.0.0",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
+    "react-intersection-observer": "^9.16.0",
+    "react-visibility-sensor": "^5.1.1",
+    "swiper": "^11.2.6",
     "tailwindcss": "^4.0.17"
   },
   "devDependencies": {
