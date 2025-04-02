@@ -47,7 +47,7 @@ import MediaCoverage from "../components/home/MediaCoverage";
 import VideoGallery from "../components/home/VideoGallery";
 import CompaniesVisited from "../components/home/CompaniesVisited";
 import PlacementStats from "../components/home/PlacementStats";
-import Testimonials from "../components/home/Testimonials";
+import Testimonials from "../components/Home/Testimonials";
 
 const Home = () => {
   return (
