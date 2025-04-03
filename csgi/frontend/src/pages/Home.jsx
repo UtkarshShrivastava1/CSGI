@@ -48,21 +48,21 @@ import VideoGallery from "../components/home/VideoGallery";
 import CompaniesVisited from "../components/home/CompaniesVisited";
 import PlacementStats from "../components/home/PlacementStats";
 import Testimonials from "../components/home/Testimonials";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <Navbar/>
       <Hero />
       <NewsTicker />
-      <InstituteInfo />
+      {/* <InstituteInfo /> */}
       <AboutSection />
-      <InfrastructureSection />
-      <div className="container mx-auto my-8 border-b border-gray-300"></div>
+      {/* <InfrastructureSection />
+      <div className="container mx-auto my-8 border-b border-gray-300"></div> */}
       <GallerySection />
-      <div className="container mx-auto my-8 border-b border-gray-300"></div>
       <MediaCoverage />
-      <div className="container mx-auto my-8 border-b border-gray-300"></div>
       <VideoGallery />
       <CompaniesVisited />
       <PlacementStats />
