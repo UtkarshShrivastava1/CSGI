@@ -35,7 +35,7 @@ export default function Navbar() {
     },
     {
       name: 'Academics',
-      dropdown: ['CSE', 'ME', 'EEE', 'IT', 'Civil', 'AI and DS', 'Mechatronics']
+      dropdown: ['Computer Science and Engineering', 'Electrical and Electronics Engineering', 'Mechanical Engineering', 'Information Technology Engineering', 'Civil Engineering', ' Artificial Intelligence & Data Science Engineering', 'Mechatronics']
     },
     {
       name: 'Admission',

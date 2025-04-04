@@ -67,7 +67,7 @@ const Home = () => {
       <CompaniesVisited />
       <PlacementStats />
       <Testimonials />
-      <Footer />
+      <Footer />  
     </div>
   );
 };
