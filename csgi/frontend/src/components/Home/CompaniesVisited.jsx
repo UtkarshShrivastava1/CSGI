@@ -142,7 +142,7 @@ const CompaniesVisited = ()=> {
         </div>
         
         {/* Stats Section */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+        {/* <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
           <div className="bg-[#0d173b] bg-opacity-10 p-6 rounded-lg">
             <h3 className="text-3xl font-bold text-white mb-2">250+</h3>
             <p className="text-white">Companies Visited</p>
@@ -159,7 +159,7 @@ const CompaniesVisited = ()=> {
             <h3 className="text-3xl font-bold text-white mb-2">₹5.5 LPA</h3>
             <p className="text-white">Average Package</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
