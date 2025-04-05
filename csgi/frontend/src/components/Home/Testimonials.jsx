@@ -58,51 +58,51 @@ const Testimonials = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white p-8 rounded-2xl shadow-xl max-w-4xl mx-auto transform transition-all duration-300 hover:scale-[1.01]">
-                <div className="absolute -top-5 left-8">
-                  <div className="bg-[#0d173b] rounded-full p-2 shadow-lg">
-                    <Quote size={24} className="text-white" />
-                  </div>
-                </div>
-                
-                <div className="flex flex-col md:flex-row items-center gap-8 pt-4">
-                  <div className="md:w-1/4 flex justify-center">
-                    {testimonial.image ? (
-                      <div className="relative">
-                        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-slate-100 shadow-md">
-                          <img
-                            src={testimonial.image}
-                            alt={testimonial.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="absolute -bottom-2 -right-2 bg-[#0d173b] text-white p-2 rounded-full">
-                          <UserCircle2 size={20} />
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="w-32 h-32 rounded-full bg-slate-100 flex items-center justify-center">
-                        <UserCircle2 size={48} className="text-[#0d173b]" />
-                      </div>
-                    )}
-                  </div>
-                  
-                  <div className="md:w-3/4 text-center md:text-left">
-                    <p className="text-2xl font-semibold mb-4 text-[#0d173b]">
-                      "{testimonial.quote}"
-                    </p>
-                    <p className="text-slate-700 mb-6">
-                      {testimonial.description}
-                    </p>
-                    <div className="flex flex-col md:flex-row md:items-center gap-2 justify-center md:justify-start">
-                      <p className="font-bold text-[#0d173b]">{testimonial.name}</p>
-                      <div className="hidden md:block h-4 w-1 bg-slate-300 rounded-full mx-2"></div>
-                      <p className="text-[#0d173b] opacity-80">{testimonial.program}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
+  <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-4xl mx-auto transform transition-all duration-300 hover:scale-[1.01] mb-10">
+    <div className="absolute -top-5 left-8">
+      <div className="bg-[#0d173b] rounded-full p-2 shadow-lg">
+        <Quote size={24} className="text-white" />
+      </div>
+    </div>
+    
+    <div className="flex flex-col md:flex-row items-center gap-8 pt-4">
+      <div className="md:w-1/4 flex justify-center">
+        {testimonial.image ? (
+          <div className="relative">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-slate-100 shadow-md">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-2 -right-2 bg-[#0d173b] text-white p-2 rounded-full">
+              <UserCircle2 size={20} />
+            </div>
+          </div>
+        ) : (
+          <div className="w-32 h-32 rounded-full bg-slate-100 flex items-center justify-center">
+            <UserCircle2 size={48} className="text-[#0d173b]" />
+          </div>
+        )}
+      </div>
+      
+      <div className="md:w-3/4 text-center md:text-left">
+        <p className="text-2xl font-semibold mb-4 text-[#0d173b]">
+          "{testimonial.quote}"
+        </p>
+        <p className="text-slate-700 mb-6">
+          {testimonial.description}
+        </p>
+        <div className="flex flex-col md:flex-row md:items-center gap-2 justify-center md:justify-start">
+          <p className="font-bold text-[#0d173b]">{testimonial.name}</p>
+          <div className="hidden md:block h-4 w-1 bg-slate-300 rounded-full mx-2"></div>
+          <p className="text-[#0d173b] opacity-80">{testimonial.program}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</SwiperSlide>
           ))}
         </Swiper>
         
