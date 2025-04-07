@@ -30,7 +30,7 @@ const Header = () => {
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo and Title */}
           <div className="flex items-center space-x-6">
-            <img src={Logo} alt="CSIT Logo" className="w-40 h-full rounded-full bg-white" />
+            <img src={Logo} alt="CSIT Logo" className="w-40 h-full rounded-full" />
             <div className="hidden md:block">
               <h1 className="text-4xl text-black md:text-3xl font-serif">Chhatrapati Shivaji Institute of Technology</h1>
               <p className="text-sm text-black">Shivaji Nagar, Baload Road Durg, Chhattisgarh 491001</p>
