@@ -45,9 +45,9 @@ import InfrastructureSection from "../components/home/InfrastructureSection";
 import GallerySection from "../components/home/GallerySection";
 import MediaCoverage from "../components/home/MediaCoverage";
 import VideoGallery from "../components/home/VideoGallery";
-import CompaniesVisited from "../components/home/CompaniesVisited";
-import PlacementStats from "../components/home/PlacementStats";
-import Testimonials from "../components/home/Testimonials";
+import CompaniesVisited from "../components/Home/CompaniesVisited";
+import PlacementStats from "../components/Home/PlacementStats";
+import Testimonials from "../components/Home/Testimonials";
 import Navbar from "../components/Navbar";
 
 const Home = () => {
