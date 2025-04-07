@@ -1,116 +1,158 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
+import { Quote, Star, GraduationCap } from "lucide-react";
+
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 
 const Testimonials = () => {
   const testimonials = [
     {
-      id: 1,
-      name: "Rahul Sharma",
-      role: "Software Engineer at Wipro",
-      image: "https://pngimg.com/uploads/student/student_PNG100.png",
-      quote: "The best decision I made was joining this college! The faculty's dedication and the industry-relevant curriculum prepared me perfectly for my career.",
+      quote: "The best decision I made was joining this college!",
+      description: "With top-notch faculty and state-of-the-art infrastructure, my learning journey has been phenomenal.",
+      name: "Student A",
+      program: "Computer Science",
       rating: 5,
-      year: "2023"
+      image: "https://pngimg.com/uploads/student/student_PNG100.png"
     },
     {
-      id: 2,
-      name: "Priya Patel",
-      role: "Data Scientist at Accenture",
-      image: "https://pngimg.com/uploads/student/student_PNG8.png",
-      quote: "The practical exposure and industry visits have equipped me with the skills I need for my career. The placement cell's support was invaluable.",
+      quote: "Excellent faculty and amazing infrastructure.",
+      description: "The practical exposure and industry visits have equipped me with the skills I need for my career.",
+      name: "Student B",
+      program: "Mechanical Engineering",
       rating: 5,
-      year: "2023"
+      image: "https://pngimg.com/uploads/student/student_PNG8.png"
     },
     {
-      id: 3,
-      name: "Amit Kumar",
-      role: "Mechanical Engineer at Tata Technologies",
-      image: "https://pngimg.com/uploads/student/student_PNG30.png",
-      quote: "Participating in various technical clubs and events enhanced my leadership and networking skills. The campus life was truly enriching.",
+      quote: "A vibrant campus life with endless opportunities.",
+      description: "Participating in various clubs and events has enhanced my leadership and networking skills.",
+      name: "Student C",
+      program: "Business Administration",
       rating: 5,
-      year: "2023"
+      image: "https://pngimg.com/uploads/student/student_PNG30.png"
     }
   ];
 
-  return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-20">
-      <div className="container mx-auto px-6 lg:px-12">
-        {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0d173b] mb-4 tracking-wide transition-all duration-500 hover:scale-105">
-            Student Testimonials
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            Hear from our successful alumni about their journey and experiences
-          </p>
-          <div className="w-20 h-1 bg-[#0d173b] mx-auto mt-4 rounded-full"></div>
-        </div>
+  // Star rating component
+  const StarRating = ({ rating }) => {
+    return (
+      <div className="flex space-x-1">
+        {[...Array(5)].map((_, i) => (
+          <Star
+            key={i}
+            size={14}
+            className={`${
+              i < rating 
+                ? "text-yellow-400 fill-yellow-400" 
+                : "text-gray-300"
+            }`}
+          />
+        ))}
+      </div>
+    );
+  };
 
-        {/* Testimonials Slider */}
+  return (
+    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 py-14 relative overflow-hidden">
+      {/* Subtle background shapes */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-10">
+        <div className="absolute top-5 left-5 w-32 h-32 rounded-full bg-blue-400 mix-blend-multiply filter blur-lg"></div>
+        <div className="absolute bottom-5 right-10 w-40 h-40 rounded-full bg-indigo-300 mix-blend-multiply filter blur-lg"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Compact header */}
+        <div className="text-center mb-10">
+          <span className="inline-block px-3 py-1 bg-[#0d173b] bg-opacity-10 rounded-full text-[#0d173b] font-medium text-xs mb-3">STUDENT VOICES</span>
+          <h2 className="text-3xl font-bold text-[#0d173b] mb-2">Testimonials</h2>
+          <div className="flex items-center justify-center mb-3">
+            <div className="h-1 w-8 bg-[#0d173b] opacity-30 rounded-full"></div>
+            <div className="h-1 w-14 bg-[#0d173b] mx-1 rounded-full"></div>
+            <div className="h-1 w-8 bg-[#0d173b] opacity-30 rounded-full"></div>
+          </div>
+        </div>
+        
         <Swiper
-          spaceBetween={30}
+          effect="coverflow"
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          coverflowEffect={{
+            rotate: 5,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+            slideShadows: false,
+          }}
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
           }}
           pagination={{
             clickable: true,
+            dynamicBullets: true,
           }}
-          modules={[Autoplay, Pagination]}
+          modules={[Autoplay, Pagination, EffectCoverflow]}
           className="testimonial-swiper"
         >
-          {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
-              <div className="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                  <div className="relative">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-32 h-32 object-cover rounded-full border-4 border-white shadow-lg"
-                    />
-                    <div className="absolute -bottom-2 -right-2 bg-[#0d173b] text-white p-2 rounded-full">
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                      </svg>
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index} className="py-6 px-2" style={{ width: "70%", maxWidth: "650px" }}>
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl group">
+                <div className="flex flex-col md:flex-row">
+                  {/* Left column with image background - made narrower */}
+                  <div className="md:w-1/3 bg-gradient-to-br from-[#0d173b] to-blue-900 p-4 relative flex flex-col items-center justify-center text-center">
+                    <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-white border-opacity-20 shadow-lg mb-3 group-hover:scale-105 transition-transform duration-300">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    <h3 className="text-white text-sm font-bold mb-1">{testimonial.name}</h3>
+                    <div className="flex items-center justify-center gap-1 text-blue-200 mb-2">
+                      <GraduationCap size={12} className="opacity-70" />
+                      <p className="text-xs">{testimonial.program}</p>
+                    </div>
+                    
+                    <div className="mt-2">
+                      <StarRating rating={testimonial.rating} />
                     </div>
                   </div>
-                  <div className="flex-1 text-center md:text-left">
-                    <div className="flex justify-center md:justify-start mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <svg
-                          key={i}
-                          className="w-5 h-5 text-yellow-400"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
+                  
+                  {/* Right column with testimonial content */}
+                  <div className="md:w-2/3 p-5 flex flex-col justify-center">
+                    <div className="mb-3">
+                      <Quote size={24} className="text-[#0d173b] opacity-20" />
                     </div>
-                    <p className="text-gray-700 text-lg italic mb-6">
+                    
+                    <p className="text-lg font-medium mb-3 text-[#0d173b] leading-snug">
                       "{testimonial.quote}"
                     </p>
-                    <div>
-                      <h4 className="text-xl font-semibold text-[#0d173b]">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-gray-600">{testimonial.role}</p>
-                      <p className="text-sm text-[#0d173b] font-medium mt-1">
-                        Placed in {testimonial.year}
-                      </p>
-                    </div>
+                    
+                    <p className="text-sm text-slate-600 mb-4 leading-relaxed">
+                      {testimonial.description}
+                    </p>
+                    
+                    <div className="h-1 w-12 bg-[#0d173b] rounded-full opacity-30"></div>
                   </div>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
+        
+        <div className="flex justify-center mt-8">
+          <div className="px-4 py-1 bg-white shadow-md rounded-full flex items-center gap-1">
+            <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+            <p className="text-xs text-gray-600"><span className="font-medium text-[#0d173b]">100+</span> student testimonials</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
