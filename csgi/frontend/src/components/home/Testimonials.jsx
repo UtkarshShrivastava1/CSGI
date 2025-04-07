@@ -56,7 +56,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 py-14 relative overflow-hidden">
+    <div className="bg-white py-14 relative overflow-hidden">
       {/* Subtle background shapes */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-10">
         <div className="absolute top-5 left-5 w-32 h-32 rounded-full bg-blue-400 mix-blend-multiply filter blur-lg"></div>
@@ -65,7 +65,7 @@ const Testimonials = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Compact header */}
-        <div className="text-center mb-10">
+        {/* <div className="text-center mb-10">
           <span className="inline-block px-3 py-1 bg-[#0d173b] bg-opacity-10 rounded-full text-[#0d173b] font-medium text-xs mb-3">STUDENT VOICES</span>
           <h2 className="text-3xl font-bold text-[#0d173b] mb-2">Testimonials</h2>
           <div className="flex items-center justify-center mb-3">
@@ -73,6 +73,18 @@ const Testimonials = () => {
             <div className="h-1 w-14 bg-[#0d173b] mx-1 rounded-full"></div>
             <div className="h-1 w-8 bg-[#0d173b] opacity-30 rounded-full"></div>
           </div>
+        </div> */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-[#0d173b] mb-2">Students Testimonials</h2>
+          {/* <div className="h-1 w-16 bg-[#0d173b] mx-auto rounded-full mb-3"></div> */}
+          <div className="flex items-center justify-center mb-3">
+            <div className="h-1 w-8 bg-[#0d173b] opacity-30 rounded-full"></div>
+            <div className="h-1 w-14 bg-[#0d173b] mx-1 rounded-full"></div>
+            <div className="h-1 w-8 bg-[#0d173b] opacity-30 rounded-full"></div>
+          </div>
+          <p className="text-slate-600 text-sm max-w-md mx-auto">
+            What our students say about their experiences
+          </p>
         </div>
         
         <Swiper
