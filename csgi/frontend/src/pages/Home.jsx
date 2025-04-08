@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Demo from "../components/Demo";
+
 // Uncomment these as they become available
 // import Hero from "../components/Hero";
 // import OurInstitute from "../components/OurInstitute";
@@ -58,7 +58,7 @@ const Home = () => {
       <Hero />
       <NewsTicker />
       {/* <InstituteInfo /> */}
-      <AboutSection />
+      <aboutSection />
       {/* <InfrastructureSection />
       <div className="container mx-auto my-8 border-b border-gray-300"></div> */}
       <GallerySection />

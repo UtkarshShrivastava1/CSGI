@@ -29,16 +29,16 @@ const Footer = () => {
               Empowering students with quality education and technical excellence since 2001.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-white hover:text-gray-300 transition-colors">
+              <Link href="#" className="text-white hover:text-gray-300 transition-colors">
                 <FaFacebookF size={24} />
               </a>
-              <a href="#" className="text-white hover:text-gray-300 transition-colors">
+              <Link href="#" className="text-white hover:text-gray-300 transition-colors">
                 <FaTwitter size={24} />
               </a>
-              <a href="#" className="text-white hover:text-gray-300 transition-colors">
+              <Link href="#" className="text-white hover:text-gray-300 transition-colors">
                 <FaInstagram size={24} />
               </a>
-              <a href="#" className="text-white hover:text-gray-300 transition-colors">
+              <Link href="#" className="text-white hover:text-gray-300 transition-colors">
                 <FaLinkedinIn size={24} />
               </a>
             </div>

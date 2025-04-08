@@ -70,7 +70,7 @@ const AboutSection = () => {
             </div>
 
             {/* Image Slider */}
-            <AboutImageSlider />
+            <LinkboutImageSlider />
           </div>
 
           {/* Right Column */}
