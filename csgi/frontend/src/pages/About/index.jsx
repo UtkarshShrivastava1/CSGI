@@ -38,11 +38,9 @@ export default function AboutPage() {
       {/* Header */}
       <Header />
       
-      {/* Refined Navbar */}
-      <div className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <Navbar />
-        </div>
+      {/* Full-width Navbar - removed constraining container */}
+      <div className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100 w-full">
+        <Navbar />
       </div>
       
       {/* Subtle Hero Section */}
@@ -60,9 +58,9 @@ export default function AboutPage() {
           
           {/* Sidebar */}
           <aside className="w-full lg:w-1/4 order-2 lg:order-1">
-            <Sidebar 
-              links={sidebarLinks} 
-              activeSection={getActiveSection()} 
+            <Sidebar
+              links={sidebarLinks}
+              activeSection={getActiveSection()}
               basePath="/about"
             />
           </aside>
