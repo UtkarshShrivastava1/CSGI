@@ -11,7 +11,7 @@ import VideoGallery from "../components/home/VideoGallery";
 import CompaniesVisited from "../components/Home/CompaniesVisited";
 import PlacementStats from "../components/Home/PlacementStats";
 import Testimonials from "../components/Home/Testimonials";
-import Navbar from "../components/Navbar";
+
 
 const Home = () => {
   return (
