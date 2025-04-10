@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';
-import Sidebar from '../../components/about/Sidebar';
+import Sidebar from '../../components/Sidebar';
 import AchievementPage from '../../pages/About/Achievement';
 import AspirationPage from '../../pages/About/Aspiration';
 import CelebrationPage from '../../pages/About/Celebration';

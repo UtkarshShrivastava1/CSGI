@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
@@ -29,7 +29,7 @@ export default function Navbar() {
     { name: 'Home', dropdown: [] },
     {
       name: 'About',
-      dropdown: ['Introduction', 'Message', 'Society', 'Celebration', 'Achievement', 'Aspiration', 'Professional Bodies', 'Governing Bodies'],
+      dropdown: ['Introduction', 'Message', 'Society', 'Celebration', 'Achievement', 'Aspiration', 'Professional Bodies', 'Governing Body'],
     },
     {
       name: 'Academics',
@@ -37,7 +37,7 @@ export default function Navbar() {
     },
     {
       name: 'Admission',
-      dropdown: ['Admission Process', 'Courses Offered', 'Helpdesk and Leaflet'],
+      dropdown: ['Courses Offered', 'Admission Process', 'Help desk ',' Leaflet'],
     },
     {
       name: 'Campus',
