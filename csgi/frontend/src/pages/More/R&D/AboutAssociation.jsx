@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Callendar = () => {
+const AboutAssociation = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Callendar = () => {
   )
 }
 
-export default Callendar
+export default AboutAssociation

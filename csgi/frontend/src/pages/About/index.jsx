@@ -1,16 +1,16 @@
 import React from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';
-import Sidebar from '../../components/about/Sidebar';
-import IntroductionPage from '../../pages/About/Introduction';
-import SocietyPage from '../../pages/About/Society';
-import AspirationPage from '../../pages/About/Aspiration';
+import Sidebar from '../../components/Sidebar';
 import AchievementPage from '../../pages/About/Achievement';
-import ProfessionalBodiesPage from '../../pages/About/ProfessionalBodies';
-import MessagePage from '../../pages/About/Message';
-import GoverningBodyPage from '../../pages/About/GoverningBody';
+import AspirationPage from '../../pages/About/Aspiration';
 import CelebrationPage from '../../pages/About/Celebration';
+import GoverningBodyPage from '../../pages/About/GoverningBody';
+import IntroductionPage from '../../pages/About/Introduction';
+import MessagePage from '../../pages/About/Message';
+import ProfessionalBodiesPage from '../../pages/About/ProfessionalBodies';
+import SocietyPage from '../../pages/About/Society';
 
 const sidebarLinks = [
   { name: 'Introduction', path: 'introduction' },
@@ -38,16 +38,14 @@ export default function AboutPage() {
       {/* Header */}
       <Header />
       
-      {/* Refined Navbar */}
-      <div className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <Navbar />
-        </div>
+      {/* Full-width Navbar */}
+      <div className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100 w-full">
+        <Navbar />
       </div>
       
-      {/* Subtle Hero Section */}
-      <div className="bg-gradient-to-r from-[#0d173b] to-[#1e305f] text-white">
-        <div className="max-w-7xl mx-auto px-4 py-10">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-[#0d173b] to-[#1e305f] text-white w-full">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h1 className="text-3xl md:text-4xl font-bold">About Our Institute</h1>
           <p className="mt-3 text-base md:text-lg font-light">Shaping the future through excellence in technical education since 1999</p>
           <div className="mt-4 h-0.5 w-16 bg-white"></div>
@@ -55,33 +53,34 @@ export default function AboutPage() {
       </div>
       
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto py-8 px-4">
-        <div className="flex flex-col lg:flex-row gap-6">
-          
-          {/* Sidebar */}
-          <aside className="w-full lg:w-1/4 order-2 lg:order-1">
-            <Sidebar 
-              links={sidebarLinks} 
-              activeSection={getActiveSection()} 
-              basePath="/about"
-            />
-          </aside>
+      <div className="w-full">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-6 py-6">
+            {/* Sidebar */}
+            <aside className="w-full lg:w-64 lg:flex-shrink-0">
+              <Sidebar
+                links={sidebarLinks}
+                activeSection={getActiveSection()}
+                basePath="/about"
+              />
+            </aside>
 
-          {/* Main Content Area - Routes will render here */}
-          <main className="flex-1 order-1 lg:order-2">
-            <Routes>
-              <Route path="introduction" element={<IntroductionPage />} />
-              <Route path="society" element={<SocietyPage />} />
-              <Route path="aspiration" element={<AspirationPage />} />
-              <Route path="achievement" element={<AchievementPage />} />
-              <Route path="professional-bodies" element={<ProfessionalBodiesPage />} />
-              <Route path="message" element={<MessagePage />} />
-              <Route path="governing-body" element={<GoverningBodyPage />} />
-              <Route path="celebration" element={<CelebrationPage />} />
-              <Route index element={<Navigate to="introduction" replace />} />
-              <Route path="*" element={<Navigate to="introduction" replace />} />
-            </Routes>
-          </main>
+            {/* Main Content Area */}
+            <main className="flex-1 min-h-[calc(100vh-400px)] bg-white rounded-lg shadow-sm p-4 md:p-6">
+              <Routes>
+                <Route path="introduction" element={<IntroductionPage />} />
+                <Route path="society" element={<SocietyPage />} />
+                <Route path="aspiration" element={<AspirationPage />} />
+                <Route path="achievement" element={<AchievementPage />} />
+                <Route path="professional-bodies" element={<ProfessionalBodiesPage />} />
+                <Route path="message" element={<MessagePage />} />
+                <Route path="governing-body" element={<GoverningBodyPage />} />
+                <Route path="celebration" element={<CelebrationPage />} />
+                <Route index element={<Navigate to="introduction" replace />} />
+                <Route path="*" element={<Navigate to="introduction" replace />} />
+              </Routes>
+            </main>
+          </div>
         </div>
       </div>
     </div>
