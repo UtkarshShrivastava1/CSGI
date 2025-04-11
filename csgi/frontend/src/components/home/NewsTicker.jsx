@@ -7,7 +7,7 @@ import "swiper/css";
 
 const NewsTicker = () => {
   return (
-    <div className="bg-blue-700 text-white py-2 overflow-hidden">
+    <div className="bg-[#0d173b] text-white py-6 overflow-hidden">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
