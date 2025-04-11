@@ -6,6 +6,7 @@ import AboutPage from './pages/About';
 import Footer from './components/Footer';
 
 
+
 function App() {
   return (
     <Router>
@@ -21,6 +22,7 @@ function App() {
         <Route path="/message" element={<Navigate to="/about/message" replace />} />
         <Route path="/governing-body" element={<Navigate to="/about/governing-body" replace />} />
         <Route path="/celebration" element={<Navigate to="/about/celebration" replace />} />
+        
         {/* Add other main routes here */}
       </Routes>
       <Footer/>
