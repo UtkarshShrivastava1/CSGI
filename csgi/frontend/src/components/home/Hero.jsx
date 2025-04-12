@@ -8,14 +8,62 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+// Custom CSS for enhancing the arrow buttons
+const customStyles = `
+  .hero-swiper .swiper-button-next,
+  .hero-swiper .swiper-button-prev {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: #0d173b;
+    font-weight: bold;
+  }
+  
+  .hero-swiper .swiper-button-next:hover,
+  .hero-swiper .swiper-button-prev:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .hero-swiper .swiper-button-next:after,
+  .hero-swiper .swiper-button-prev:after {
+    font-size: 18px;
+  }
+  
+  .hero-swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .hero-swiper .swiper-pagination-bullet-active {
+    background-color: #0d173b;
+  }
+`;
+
 const Hero = () => {
+  const slides = [
+    {
+      image: csitBanner,
+      alt: "College Campus"
+    },
+    {
+      image: csitBanner,
+      alt: "College Facilities"
+    },
+    {
+      image: csitBanner,
+      alt: "Student Activities"
+    }
+  ];
+
   return (
-    <div className="w-full bg-gray-100">
+    <div className="w-full bg-white">
+      <style>{customStyles}</style>
       <Swiper
         spaceBetween={0}
         centeredSlides={true}
         autoplay={{
-          delay: 3000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -23,16 +71,17 @@ const Hero = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
+        className="hero-swiper"
       >
-        <SwiperSlide>
-          <img
-            src={csitBanner}
-            alt="Seminar on Latest Tech"
-            className="w-full h-[500px] object-cover"
-          />
-        </SwiperSlide>
-        {/* Add more slides here if needed */}
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={slide.image}
+              alt={slide.alt}
+              className="w-full h-[550px] object-cover"
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

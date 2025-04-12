@@ -23,35 +23,35 @@ const SchoolFooter = () => {
           </div>
           
           <div className="flex space-x-4">
-            <a href="https://www.instagram.com/csitdurg/" 
+            <a href="https://www.instagram.com/csgidurg/" 
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="Instagram"
                target="_blank"
                rel="noopener noreferrer">
               <FaInstagram className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
             </a>
-            <a href="https://www.facebook.com/csitdurg/"
+            <a href="https://www.facebook.com/csgidurg.in"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="Facebook"
                target="_blank"
                rel="noopener noreferrer">
               <FaFacebookF className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
             </a>
-            <a href="https://www.youtube.com/channel/UCit-WPPLSJ4SYUe4YS9xNVw"
+            <a href="https://www.youtube.com/channel/UCp_whb0YhFgOSYofgSVQjuA/videos"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="YouTube"
                target="_blank"
                rel="noopener noreferrer">
               <FaYoutube className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
             </a>
-            <a href="https://www.linkedin.com/school/csitdurg/"
+            <a href="https://www.linkedin.com/in/chhatrapati-shivaji-group-of-institutions-durg-9909173b/"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="LinkedIn"
                target="_blank"
                rel="noopener noreferrer">
               <FaLinkedinIn className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
             </a>
-            <a href="https://twitter.com/csitdurg"
+            <a href="https://x.com/DurgCsit"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="Twitter"
                target="_blank"
@@ -115,7 +115,14 @@ const SchoolFooter = () => {
                 <div className="bg-blue-900 p-2 rounded-md mr-3 flex-shrink-0 mt-1">
                   <HiLocationMarker className="h-5 w-5 text-blue-300" style={{ fontSize: '1.25rem' }} />
                 </div>
-                <span className="text-gray-300 text-sm">Shivaji Nagar, Balod Road Durg, Chhattisgarh 491001</span>
+                <a 
+        href="https://www.google.com/maps/place/CSIT+Durg/@21.1482141,81.2611754,722m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a293bf98e611daf:0x9aeb86912d1db8e7!8m2!3d21.1482141!4d81.2611754!16s%2Fm%2F076xq1f?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-gray-300 text-sm hover:text-blue-300 transition duration-300"
+      >
+        Shivaji Nagar, Balod Road Durg, Chhattisgarh 491001
+      </a>
               </li>
               <li className="flex items-center">
                 <div className="bg-blue-900 p-2 rounded-md mr-3 flex-shrink-0">
@@ -156,6 +163,12 @@ const SchoolFooter = () => {
             <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Privacy Policy</a>
             <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Terms & Conditions</a>
             <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Sitemap</a>
+            <a
+              href="/admin-login"
+              className="text-gray-400 hover:text-gray-200 transition duration-300"
+            >
+              Admin
+            </a>
           </div>
           <div className="text-gray-400 mt-2 md:mt-0">
             Powered by <a href="https://www.zager.in/" className="text-blue-400 hover:text-blue-300 transition duration-300" target="_blank" rel="noopener noreferrer">Zager Digital Services</a>
