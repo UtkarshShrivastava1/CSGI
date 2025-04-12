@@ -163,6 +163,12 @@ const SchoolFooter = () => {
             <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Privacy Policy</a>
             <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Terms & Conditions</a>
             <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Sitemap</a>
+            <a
+              href="/admin-login"
+              className="text-gray-400 hover:text-gray-200 transition duration-300"
+            >
+              Admin
+            </a>
           </div>
           <div className="text-gray-400 mt-2 md:mt-0">
             Powered by <a href="https://www.zager.in/" className="text-blue-400 hover:text-blue-300 transition duration-300" target="_blank" rel="noopener noreferrer">Zager Digital Services</a>
