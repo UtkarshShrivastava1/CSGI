@@ -11,7 +11,7 @@ import Leaflet from "./Leaflet";
 const sidebarLinks = [
   { name: "Courses Offered", path: "courses-offered" },
   { name: "Admission Process", path: "admission-process" },
-  { name: "Leaflet", path: "leaflet" },
+  { name: "Leaflet", path: "Leaflet",},
   { name: "Help Desk", path: "help-desk" },
 ];
 

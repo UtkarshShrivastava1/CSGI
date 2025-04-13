@@ -5,6 +5,9 @@ import Footer from './components/Footer';
 import AboutPage from './pages/About';
 import AdmissionPage from './pages/Admission';
 import Home from './pages/Home';
+import Cse from './pages/Academics/CSE/Index.jsx';
+import AIDS from './pages/Academics/AIandDs/Index.jsx';
+import Civil from './pages/Academics/CIVIL/Index.jsx';
 
 function App() {
   return (
@@ -13,7 +16,10 @@ function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            
+            <Route path="/cse" element={<Cse />} />
+            <Route path="/aids" element={<AIDS />} />
+            <Route path="/civil" element={<Civil />} />
+           
             {/* About page and its nested routes */}
             <Route path="/about/*" element={<AboutPage />} />
             
