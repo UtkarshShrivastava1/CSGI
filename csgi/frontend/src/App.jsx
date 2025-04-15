@@ -2,9 +2,22 @@
 import React from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
+import Home from './pages/Home';
 import AboutPage from './pages/About/AboutIndex';
 import AdmissionPage from './pages/Admission/AdmissionIndex';
-import Home from './pages/Home';
+import AdminLogin from './pages/Admin/AdminLogin';
+import AdminDashboard from './pages/Admin/AdminDasboard';
+import GalleryForm from './pages/Admin/GalleryForm';
+import GalleryDashboard from './pages/Admin/GalleryDashboard';
+
+// Protected Route Component
+const ProtectedRoute = ({ children }) => {
+  const token = localStorage.getItem('adminToken');
+  if (!token) {
+    return <Navigate to="/admin-login" replace />;
+  }
+  return children;
+};
 
 function App() {
   return (
@@ -12,13 +25,37 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <div className="flex-grow">
           <Routes>
+            {/* Public Routes */}
             <Route path="/" element={<Home />} />
-            
-            {/* About page and its nested routes */}
             <Route path="/about/*" element={<AboutPage />} />
-            
-            {/* Admission page and its nested routes */}
             <Route path="/admission/*" element={<AdmissionPage />} />
+
+            {/* Admin Routes */}
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route 
+              path="/admin/dashboard" 
+              element={
+                <ProtectedRoute>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/admin/gallery/upload" 
+              element={
+                <ProtectedRoute>
+                  <GalleryForm />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/admin/gallery-dashboard" 
+              element={
+                <ProtectedRoute>
+                  <GalleryDashboard />
+                </ProtectedRoute>
+              } 
+            />
 
             {/* Redirects for About section */}
             <Route path="/introduction" element={<Navigate to="/about/introduction" replace />} />
@@ -37,7 +74,7 @@ function App() {
             <Route path="/leaflet" element={<Navigate to="/admission/leaflet" replace />} />
             <Route path="/help-desk" element={<Navigate to="/admission/help-desk" replace />} />
 
-            {/* Catch all route - redirect to home */}
+            {/* Catch-all route */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
