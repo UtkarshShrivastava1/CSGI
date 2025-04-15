@@ -37,7 +37,7 @@ export default function Navbar() {
     },
     {
       name: 'Admission',
-      dropdown: ['Courses Offered', 'Admission Process', 'Help desk ',' Leaflet'],
+      dropdown: ['Courses Offered', 'Admission Process', 'Help Desk', ' Leaflet'],
     },
     {
       name: 'Campus',

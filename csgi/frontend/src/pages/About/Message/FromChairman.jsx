@@ -1,5 +1,5 @@
 import React from "react";
-
+import chairmanImage from "../../../assets/chairman.png";
 const FromChairman = () => {
   return (
     <div className="bg-white shadow-xl rounded-lg overflow-hidden">
@@ -23,7 +23,7 @@ const FromChairman = () => {
           <div className="w-full md:w-1/3">
             <div className="overflow-hidden rounded-lg shadow-md">
               <img
-                src="/path-to-chairman-photo.jpg" // Replace with actual path
+                src={chairmanImage} // Replace with actual path
                 alt="Chairman"
                 className="w-full object-cover object-top rounded-lg border border-gray-200"
               />
