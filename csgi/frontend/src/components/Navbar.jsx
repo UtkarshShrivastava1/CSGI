@@ -29,7 +29,7 @@ export default function Navbar() {
     { name: 'Home', dropdown: [] },
     {
       name: 'About',
-      dropdown: ['Introduction', 'Message', 'Society', 'Celebration', 'Achievement', 'Aspiration', 'Professional Bodies', 'Governing Body'],
+      dropdown: ['Introduction', 'Society', 'Aspiration', 'Achievement',  'Professional Bodies','Message', 'Governing Body','Celebration'],
     },
     {
       name: 'Academics',
@@ -53,16 +53,22 @@ export default function Navbar() {
       dropdown: ['About Association', 'Activities', 'Presence', 'Registered Association', 'Team Members'],
     },
     {
+      name:'NAAC Cycle',
+      dropdown:['NAAC Cycle 1','NAAC Cycle 2','NAAC Cycle 3'],
+    },
+    {
       name: 'More',
       dropdown: [
-        {
-          name: 'Student Affairs',
-          submenu: ['Counselling', 'Development Programs', 'Extra Co-curricular Activities', 'Industry Interactions', 'Students Clubs', 'The Student Association'],
-        },
-        {
-          name: 'R&D',
-          submenu: ['About Association', 'Activities', 'Presence', 'Registered Association', 'Team Members'],
-        },
+        // {
+        //   name: 'Student Affairs',
+        //   submenu: ['Counselling', 'Development Programs', 'Extra Co-curricular Activities', 'Industry Interactions', 'Students Clubs', 'The Student Association'],
+        // },
+        // {
+        //   name: 'R&D',
+        //   submenu: ['About Association', 'Activities', 'Presence', 'Registered Association', 'Team Members'],
+        // },
+        'Student Affairs',
+        'R&D',
         'Calendar',
         'Feedback',
         'Gallery',

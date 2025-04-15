@@ -67,8 +67,8 @@ const AboutSection = () => {
           >
             Shaping Future Innovators
           </h2>
-          <div 
-            className="w-24 h-1 bg-[#0d173b] mx-auto rounded-full transition-all duration-500 hover:w-32"
+          <div
+            className="w-24 h-1 bg-[#0d173b] mx-auto rounded-full transition-all duration-500 "
             data-aos="fade-up"
             data-aos-delay="300"
           ></div>

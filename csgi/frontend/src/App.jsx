@@ -2,8 +2,8 @@
 import React from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-import AboutPage from './pages/About';
-import AdmissionPage from './pages/Admission';
+import AboutPage from './pages/About/AboutIndex';
+import AdmissionPage from './pages/Admission/AdmissionIndex';
 import Home from './pages/Home';
 
 function App() {
