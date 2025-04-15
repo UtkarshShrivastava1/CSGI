@@ -3,6 +3,7 @@ import React from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+<<<<<<< HEAD
 import AboutPage from './pages/About/AboutIndex';
 import AdmissionPage from './pages/Admission/AdmissionIndex';
 import AdminLogin from './pages/Admin/AdminLogin';
@@ -18,6 +19,11 @@ const ProtectedRoute = ({ children }) => {
   }
   return children;
 };
+=======
+import Cse from './pages/Academics/CSE/Index.jsx';
+import AIDS from './pages/Academics/AIandDs/Index.jsx';
+import Civil from './pages/Academics/CIVIL/Index.jsx';
+>>>>>>> origin/Devendra
 
 function App() {
   return (
@@ -27,6 +33,14 @@ function App() {
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Home />} />
+<<<<<<< HEAD
+=======
+            <Route path="/cse" element={<Cse />} />
+            <Route path="/aids" element={<AIDS />} />
+            <Route path="/civil" element={<Civil />} />
+           
+            {/* About page and its nested routes */}
+>>>>>>> origin/Devendra
             <Route path="/about/*" element={<AboutPage />} />
             <Route path="/admission/*" element={<AdmissionPage />} />
 
