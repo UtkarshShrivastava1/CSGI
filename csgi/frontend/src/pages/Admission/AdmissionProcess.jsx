@@ -111,8 +111,8 @@ const AdmissionProcess = () => {
                 "Aadhar Card (Photocopy)",
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
-                  <div className="flex-shrink-0 h-5 w-5 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-2 mt-0.5">
-                    <div className="h-2 w-2 rounded-full bg-[#1e305f]"></div>
+                  <div className="flex-shrink-0 h-3 w-3 rounded-full text-white bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-2 mt-0.5">
+                    <div className="h-1 w-1 rounded-full "></div>
                   </div>
                   <span>{item}</span>
                 </li>
@@ -151,7 +151,7 @@ const AdmissionProcess = () => {
                 <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-3 mt-0.5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-3 w-3 text-[#1e305f]"
+                    className="h-3 w-3 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -178,7 +178,7 @@ const AdmissionProcess = () => {
                 <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-3 mt-0.5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-3 w-3 text-[#1e305f]"
+                    className="h-3 w-3 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -203,7 +203,7 @@ const AdmissionProcess = () => {
                 <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-3 mt-0.5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-3 w-3 text-[#1e305f]"
+                    className="h-3 w-3 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -228,7 +228,7 @@ const AdmissionProcess = () => {
                 <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#0d173b] bg-opacity-10 flex items-center justify-center mr-3 mt-0.5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-3 w-3 text-[#1e305f]"
+                    className="h-3 w-3 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

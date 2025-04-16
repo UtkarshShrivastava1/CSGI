@@ -4,16 +4,22 @@ const Society = () => {
   return (
     <div className="bg-white shadow-md rounded-md overflow-hidden">
       {/* Header */}
-      <div className="h-40 bg-gray-100 relative">
+      <div className="h-40 bg-gradient-to-r from-[#0d173b] to-[#1e305f] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full transform rotate-12 scale-150 translate-y-10">
+            <div className="w-20 h-60 bg-white/10 rounded-full blur-xl absolute -left-10"></div>
+            <div className="w-20 h-40 bg-white/10 rounded-full blur-xl absolute right-20 top-10"></div>
+          </div>
+        </div>
         <div className="absolute inset-0 flex items-center px-6">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0d173b]">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
               About Society
             </h2>
-            <p className="text-gray-500 text-sm mt-2">
+            <p className="text-gray-200 text-sm mt-2">
               CSIT | Shivnath Shikshan & Seva Samiti
             </p>
-            <div className="h-0.5 w-12 bg-[#0d173b] mt-3"></div>
+            <div className="h-0.5 w-12 bg-white mt-3"></div>
           </div>
         </div>
       </div>

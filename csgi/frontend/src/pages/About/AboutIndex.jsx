@@ -3,14 +3,14 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';
 import Sidebar from '../../components/Sidebar';
-import AchievementPage from '../../pages/About/Achievement';
-import AspirationPage from '../../pages/About/Aspiration';
-import CelebrationPage from '../../pages/About/Celebration';
-import GoverningBodyPage from '../../pages/About/GoverningBody';
-import IntroductionPage from '../../pages/About/Introduction';
-import MessagePage from '../../pages/About/Message';
-import ProfessionalBodiesPage from '../../pages/About/ProfessionalBodies';
-import SocietyPage from '../../pages/About/Society';
+import AchievementPage from './Achievement';
+import AspirationPage from './Aspiration';
+import CelebrationPage from './Celebration';
+import GoverningBodyPage from './GoverningBody';
+import IntroductionPage from './Introduction';
+import MessagePage from './Message/MessageIndex';
+import ProfessionalBodiesPage from './ProfessionalBodies';
+import SocietyPage from './Society';
 
 const sidebarLinks = [
   { name: 'Introduction', path: 'introduction' },
@@ -18,7 +18,7 @@ const sidebarLinks = [
   { name: 'Aspiration', path: 'aspiration' },
   { name: 'Achievement', path: 'achievement' },
   { name: 'Professional Bodies', path: 'professional-bodies' },
-  { name: 'Message', path: 'message' },
+  { name: 'Messages', path: 'message' },
   { name: 'Governing Body', path: 'governing-body' },
   { name: 'Celebration', path: 'celebration' }
 ];
