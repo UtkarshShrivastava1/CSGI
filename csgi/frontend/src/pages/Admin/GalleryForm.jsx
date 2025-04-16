@@ -1,40 +1,52 @@
 import React, { useState, useCallback } from "react";
-import { Upload, Loader2, CheckCircle2, XCircle, Image } from "lucide-react";
+import { Upload, Loader2, CheckCircle2, XCircle, Image, X } from "lucide-react";
 import { useDropzone } from "react-dropzone";
 import { useNavigate } from "react-router-dom";
 
 function GalleryForm() {
   const [formData, setFormData] = useState({
-    image: null,
+    images: []
   });
-  const [previewUrl, setPreviewUrl] = useState("");
+  const [previewUrls, setPreviewUrls] = useState([]);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState({ type: null, message: "" });
   const navigate = useNavigate();
 
   const onDrop = useCallback((acceptedFiles) => {
-    const file = acceptedFiles[0];
-    if (file) {
-      setFormData((prev) => ({
+    if (acceptedFiles?.length) {
+      // Create preview URLs for all accepted files
+      const newPreviewUrls = acceptedFiles.map(file => URL.createObjectURL(file));
+      
+      setFormData(prev => ({
         ...prev,
-        image: file,
+        images: [...prev.images, ...acceptedFiles]
       }));
-
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPreviewUrl(reader.result);
-      };
-      reader.readAsDataURL(file);
+      
+      setPreviewUrls(prev => [...prev, ...newPreviewUrls]);
     }
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      'image/*': ['.jpeg', '.jpg', '.png', '.gif']
+      'image/*': ['.jpeg', '.jpg', '.png', '.gif', '.webp']
     },
-    maxFiles: 1
+    multiple: true
   });
+
+  const removeImage = (index) => {
+    // Create new arrays without the item at the specified index
+    const newImages = [...formData.images];
+    newImages.splice(index, 1);
+    
+    const newPreviewUrls = [...previewUrls];
+    // Revoke the object URL to avoid memory leaks
+    URL.revokeObjectURL(previewUrls[index]);
+    newPreviewUrls.splice(index, 1);
+    
+    setFormData(prev => ({ ...prev, images: newImages }));
+    setPreviewUrls(newPreviewUrls);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,12 +60,18 @@ function GalleryForm() {
         return;
       }
 
-      const postData = new FormData();
-      if (formData.image) {
-        postData.append("image", formData.image);
+      if (formData.images.length === 0) {
+        setStatus({ type: "error", message: "Please select at least one image to upload." });
+        setLoading(false);
+        return;
       }
 
-      const response = await fetch("http://localhost:5000/api/gallery", {
+      const postData = new FormData();
+      formData.images.forEach(image => {
+        postData.append("images", image);
+      });
+
+      const response = await fetch("http://localhost:5000/api/gallery/multiple", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -64,15 +82,22 @@ function GalleryForm() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Failed to upload image");
+        throw new Error(data.message || "Failed to upload images");
       }
 
-      setStatus({ type: "success", message: "Image uploaded successfully!" });
-      setFormData({ image: null });
-      setPreviewUrl("");
+      setStatus({ 
+        type: "success", 
+        message: `Successfully uploaded ${data.uploadedCount} ${data.uploadedCount === 1 ? 'image' : 'images'}!` 
+      });
+      
+      // Clear form
+      setFormData({ images: [] });
+      // Revoke all object URLs to prevent memory leaks
+      previewUrls.forEach(url => URL.revokeObjectURL(url));
+      setPreviewUrls([]);
       e.target.reset();
     } catch (error) {
-      console.error("Error uploading image:", error);
+      console.error("Error uploading images:", error);
       setStatus({ type: "error", message: error.message });
     } finally {
       setLoading(false);
@@ -89,7 +114,7 @@ function GalleryForm() {
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
           <div>
             <h2 className="text-3xl font-serif font-bold text-[#0d173b] mb-3">Gallery Upload</h2>
-            <p className="text-gray-600 text-lg">Add stunning visuals to your gallery collection</p>
+            <p className="text-gray-600 text-lg">Add multiple images to your gallery collection</p>
           </div>
           <button
             onClick={handleViewDashboard}
@@ -118,35 +143,53 @@ function GalleryForm() {
               </div>
               <div className="space-y-2">
                 <p className="text-xl font-medium text-gray-700">
-                  {isDragActive ? "Drop your image here" : "Drag & drop an image here"}
+                  {isDragActive ? "Drop your images here" : "Drag & drop images here"}
                 </p>
                 <p className="text-base text-gray-500">or click to browse from your device</p>
-                <p className="text-sm text-gray-400 mt-3">Supported formats: JPG, PNG, GIF</p>
+                <p className="text-sm text-gray-400 mt-3">Supported formats: JPG, PNG, GIF, WebP</p>
+                <p className="text-sm font-medium text-[#0d173b] mt-2">Upload multiple files at once!</p>
               </div>
             </div>
           </div>
 
-          {previewUrl && (
+          {previewUrls.length > 0 && (
             <div className="mt-8 animate-fadeIn">
               <div className="flex items-center justify-between mb-4">
-                <p className="text-base font-medium text-[#0d173b]">Image Preview</p>
+                <p className="text-base font-medium text-[#0d173b]">
+                  Image Previews ({previewUrls.length} {previewUrls.length === 1 ? 'file' : 'files'} selected)
+                </p>
                 <button 
                   type="button"
                   onClick={() => {
-                    setPreviewUrl("");
-                    setFormData(prev => ({ ...prev, image: null }));
+                    // Revoke all object URLs to prevent memory leaks
+                    previewUrls.forEach(url => URL.revokeObjectURL(url));
+                    setPreviewUrls([]);
+                    setFormData(prev => ({ ...prev, images: [] }));
                   }}
                   className="text-sm text-red-600 hover:text-red-800 flex items-center gap-1"
                 >
-                  <XCircle className="w-4 h-4" /> Remove
+                  <XCircle className="w-4 h-4" /> Remove All
                 </button>
               </div>
-              <div className="relative w-full h-72 bg-gray-50 rounded-xl overflow-hidden border border-gray-200 shadow-md">
-                <img
-                  src={previewUrl}
-                  alt="Preview"
-                  className="w-full h-full object-contain"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {previewUrls.map((url, index) => (
+                  <div key={index} className="relative group">
+                    <div className="relative w-full h-40 bg-gray-50 rounded-lg overflow-hidden border border-gray-200 shadow-md">
+                      <img
+                        src={url}
+                        alt={`Preview ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => removeImage(index)}
+                        className="absolute top-2 right-2 bg-white/80 hover:bg-white p-1 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <X className="w-5 h-5 text-red-600" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           )}
@@ -168,7 +211,7 @@ function GalleryForm() {
 
           <button
             type="submit"
-            disabled={loading || !formData.image}
+            disabled={loading || formData.images.length === 0}
             className="w-full flex items-center justify-center gap-2 font-medium text-lg px-6 py-4 bg-[#0d173b] text-white rounded-lg 
               hover:bg-[#0d173b]/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed
               shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:hover:transform-none"

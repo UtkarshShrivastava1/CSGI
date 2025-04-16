@@ -10,7 +10,8 @@ const fileFilter = (req, file, cb) => {
     cb(null, true);
 };
 
-const upload = multer({
+// Single image upload middleware
+const uploadSingle = multer({
     storage,
     limits: {
         fileSize: 15 * 1024 * 1024,
@@ -19,14 +20,24 @@ const upload = multer({
     fileFilter
 }).single('image');
 
-const uploadMiddleware = (req, res, next) => {
-    upload(req, res, (err) => {
+// Multiple image upload middleware
+const uploadMultiple = multer({
+    storage,
+    limits: {
+        fileSize: 15 * 1024 * 1024,
+        files: 10 // Limit to 10 files at once
+    },
+    fileFilter
+}).array('images', 10); // 'images' is the field name, 10 is max number of files
+
+const singleUploadMiddleware = (req, res, next) => {
+    uploadSingle(req, res, (err) => {
         if (err) {
             if (err instanceof multer.MulterError) {
                 return res.status(400).json({
                     success: false,
                     message: err.code === 'LIMIT_FILE_SIZE' 
-                        ? 'File too large. Maximum size is 2MB.' 
+                        ? 'File too large. Maximum size is 15MB.' 
                         : err.message
                 });
             }
@@ -39,4 +50,29 @@ const uploadMiddleware = (req, res, next) => {
     });
 };
 
-module.exports = uploadMiddleware;
+const multipleUploadMiddleware = (req, res, next) => {
+    uploadMultiple(req, res, (err) => {
+        if (err) {
+            if (err instanceof multer.MulterError) {
+                return res.status(400).json({
+                    success: false,
+                    message: err.code === 'LIMIT_FILE_SIZE' 
+                        ? 'File too large. Maximum size is 15MB.' 
+                        : err.code === 'LIMIT_FILE_COUNT'
+                        ? 'Too many files. Maximum is 10 files.'
+                        : err.message
+                });
+            }
+            return res.status(400).json({
+                success: false,
+                message: err.message
+            });
+        }
+        next();
+    });
+};
+
+module.exports = {
+    singleUploadMiddleware,
+    multipleUploadMiddleware
+};
