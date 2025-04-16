@@ -9,3 +9,4 @@ const SeminarHall = () => {
 }
 
 export default SeminarHall
+ 
