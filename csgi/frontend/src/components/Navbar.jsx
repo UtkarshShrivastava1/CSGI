@@ -40,14 +40,14 @@ export default function Navbar() {
                 <div className="absolute h-2 -top-2 inset-x-0"></div>
                 <div className="rounded-md shadow-lg bg-white">
                   <div className="py-1">
-                    <Link to="/introduction" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Introduction</Link>
-                    <Link to="/society" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Society</Link>
-                    <Link to="/aspiration" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Aspiration</Link>
-                    <Link to="/achievement" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Achievement</Link>
-                    <Link to="/professional-bodies" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Professional Bodies</Link>
-                    <Link to="/message" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Message</Link>
-                    <Link to="/governing-body" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Governing Body</Link>
-                    <Link to="/celebration" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Celebration</Link>
+                    <Link to="/about/introduction" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Introduction</Link>
+                    <Link to="/about/society" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Society</Link>
+                    <Link to="/about/aspiration" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Aspiration</Link>
+                    <Link to="/about/achievement" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Achievement</Link>
+                    <Link to="/about/professional-bodies" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Professional Bodies</Link>
+                    <Link to="/about/message" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Message</Link>
+                    <Link to="/about/governing-body" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Governing Body</Link>
+                    <Link to="/about/celebration" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Celebration</Link>
                   </div>
                 </div>
               </div>
@@ -63,13 +63,13 @@ export default function Navbar() {
                 <div className="absolute h-2 -top-2 inset-x-0"></div>
                 <div className="rounded-md shadow-lg bg-white">
                   <div className="py-1">
-                    <Link to="/computer-science-and-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Computer Science and Engineering</Link>
-                    <Link to="/electrical-and-electronics-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Electrical and Electronics Engineering</Link>
-                    <Link to="/mechanical-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Mechanical Engineering</Link>
-                    <Link to="/information-technology-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Information Technology Engineering</Link>
-                    <Link to="/civil-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Civil Engineering</Link>
-                    <Link to="/artificial-intelligence-and-data-science-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Artificial Intelligence & Data Science Engineering</Link>
-                    <Link to="/mechatronics" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Mechatronics</Link>
+                    <Link to="/academics/computer-science-and-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Computer Science and Engineering</Link>
+                    <Link to="/academics/electrical-and-electronics-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Electrical and Electronics Engineering</Link>
+                    <Link to="/academics/mechanical-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Mechanical Engineering</Link>
+                    <Link to="/academics/information-technology-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Information Technology Engineering</Link>
+                    <Link to="/academics/civil-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Civil Engineering</Link>
+                    <Link to="/academics/artificial-intelligence-and-data-science-engineering" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Artificial Intelligence & Data Science Engineering</Link>
+                    <Link to="/academics/mechatronics" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Mechatronics</Link>
                   </div>
                 </div>
               </div>
@@ -85,10 +85,10 @@ export default function Navbar() {
                 <div className="absolute h-2 -top-2 inset-x-0"></div>
                 <div className="rounded-md shadow-lg bg-white">
                   <div className="py-1">
-                    <Link to="/courses-offered" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Courses Offered</Link>
-                    <Link to="/admission-process" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Admission Process</Link>
-                    <Link to="/help-desk" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Help Desk</Link>
-                    <Link to="/leaflet" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Leaflet</Link>
+                    <Link to="/admission/courses-offered" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Courses Offered</Link>
+                    <Link to="/admission/admission-process" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Admission Process</Link>
+                    <Link to="/admission/help-desk" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Help Desk</Link>
+                    <Link to="/admission/leaflet" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Leaflet</Link>
                   </div>
                 </div>
               </div>
@@ -104,8 +104,8 @@ export default function Navbar() {
                 <div className="absolute h-2 -top-2 inset-x-0"></div>
                 <div className="rounded-md shadow-lg bg-white">
                   <div className="py-1">
-                    <Link to="/facilities" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Facilities</Link>
-                    <Link to="/initiatives" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Initiatives</Link>
+                    <Link to="/campus/facilities" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Facilities</Link>
+                    <Link to="/campus/initiatives" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Initiatives</Link>
                   </div>
                 </div>
               </div>
@@ -131,14 +131,14 @@ export default function Navbar() {
                 <div className="absolute h-2 -top-2 inset-x-0"></div>
                 <div className="rounded-md shadow-lg bg-white">
                   <div className="py-1">
-                    <Link to="/about-tnp-cell" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">About TNP Cell</Link>
-                    <Link to="/internship" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Internship</Link>
-                    <Link to="/mous" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">MOUs</Link>
-                    <Link to="/our-recruiters" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Our Recruiters</Link>
-                    <Link to="/placement-policies" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Placement Policies</Link>
-                    <Link to="/team-members" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Team Members</Link>
-                    <Link to="/placement-statistics" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Placement Statistics</Link>
-                    <Link to="/training-programme" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Training Programme</Link>
+                    <Link to="/placement/about-tnp-cell" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">About TNP Cell</Link>
+                    <Link to="/placement/internship" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Internship</Link>
+                    <Link to="/placement/mous" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">MOUs</Link>
+                    <Link to="/placement/our-recruiters" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Our Recruiters</Link>
+                    <Link to="/placement/placement-policies" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Placement Policies</Link>
+                    <Link to="/placement/team-members" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Team Members</Link>
+                    <Link to="/placement/placement-statistics" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Placement Statistics</Link>
+                    <Link to="/placement/training-programme" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Training Programme</Link>
                   </div>
                 </div>
               </div>
@@ -154,11 +154,11 @@ export default function Navbar() {
                 <div className="absolute h-2 -top-2 inset-x-0"></div>
                 <div className="rounded-md shadow-lg bg-white">
                   <div className="py-1">
-                    <Link to="/about-association" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">About Association</Link>
-                    <Link to="/activities" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Activities</Link>
-                    <Link to="/presence" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Presence</Link>
-                    <Link to="/registered-association" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Registered Association</Link>
-                    <Link to="/team-members" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Team Members</Link>
+                    <Link to="/alumni/about-association" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">About Association</Link>
+                    <Link to="/alumni/activities" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Activities</Link>
+                    <Link to="/alumni/presence" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Presence</Link>
+                    <Link to="/alumni/registered-association" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Registered Association</Link>
+                    <Link to="/alumni/team-members" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Team Members</Link>
                   </div>
                 </div>
               </div>
@@ -174,9 +174,9 @@ export default function Navbar() {
                 <div className="absolute h-2 -top-2 inset-x-0"></div>
                 <div className="rounded-md shadow-lg bg-white">
                   <div className="py-1">
-                    <Link to="/naac-cycle-1" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">NAAC Cycle 1</Link>
-                    <Link to="/naac-cycle-2" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">NAAC Cycle 2</Link>
-                    <Link to="/naac-cycle-3" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">NAAC Cycle 3</Link>
+                    <Link to="/naac-cycle/naac-cycle-1" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">NAAC Cycle 1</Link>
+                    <Link to="/naac-cycle/naac-cycle-2" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">NAAC Cycle 2</Link>
+                    <Link to="/naac-cycle/naac-cycle-3" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">NAAC Cycle 3</Link>
                   </div>
                 </div>
               </div>
@@ -192,14 +192,14 @@ export default function Navbar() {
                 <div className="absolute h-2 -top-2 inset-x-0"></div>
                 <div className="rounded-md shadow-lg bg-white">
                   <div className="py-1">
-                    <Link to="/student-affairs" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Student Affairs</Link>
-                    <Link to="/r-and-d" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">R&D</Link>
-                    <Link to="/calendar" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Calendar</Link>
-                    <Link to="/feedback" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Feedback</Link>
-                    <Link to="/gallery" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Gallery</Link>
-                    <Link to="/grievances" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Grievances</Link>
-                    <Link to="/iqac" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">IQAC</Link>
-                    <Link to="/rti" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">RTI</Link>
+                    <Link to="/more/student-affairs" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Student Affairs</Link>
+                    <Link to="/more/r-and-d" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">R&D</Link>
+                    <Link to="/more/calendar" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Calendar</Link>
+                    <Link to="/more/feedback" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Feedback</Link>
+                    <Link to="/more/gallery" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Gallery</Link>
+                    <Link to="/more/grievances" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Grievances</Link>
+                    <Link to="/more/iqac" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">IQAC</Link>
+                    <Link to="/more/rti" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">RTI</Link>
                   </div>
                 </div>
               </div>
@@ -285,25 +285,25 @@ export default function Navbar() {
 
               {activeDropdownMobile === 2 && (
                 <div className="pl-4 space-y-1 mt-1">
-                  <Link to="/computer-science-and-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
+                  <Link to="/academics/computer-science-and-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
                     Computer Science and Engineering
                   </Link>
-                  <Link to="/electrical-and-electronics-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
+                  <Link to="/academics/electrical-and-electronics-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
                     Electrical and Electronics Engineering
                   </Link>
-                  <Link to="/mechanical-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
+                  <Link to="/academics/mechanical-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
                     Mechanical Engineering
                   </Link>
-                  <Link to="/information-technology-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
+                  <Link to="/academics/information-technology-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
                     Information Technology Engineering
                   </Link>
-                  <Link to="/civil-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
+                  <Link to="/academics/civil-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
                     Civil Engineering
                   </Link>
-                  <Link to="/artificial-intelligence-and-data-science-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
+                  <Link to="/academics/artificial-intelligence-and-data-science-engineering" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
                     Artificial Intelligence & Data Science Engineering
                   </Link>
-                  <Link to="/mechatronics" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
+                  <Link to="/academics/mechatronics" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
                     Mechatronics
                   </Link>
                 </div>
@@ -425,9 +425,6 @@ export default function Navbar() {
                 <div className="pl-4 space-y-1 mt-1">
                   <Link to="/about-association" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
                     About Association
-                  </Link>
-                  <Link to="/activities" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
-                  About Association
                   </Link>
                   <Link to="/activities" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white" onClick={() => setMobileMenuOpen(false)}>
                     Activities
