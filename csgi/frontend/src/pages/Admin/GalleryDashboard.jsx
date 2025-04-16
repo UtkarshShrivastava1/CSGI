@@ -409,16 +409,6 @@ const GalleryDashboard = () => {
                 <ImagePlus className="w-8 h-8 text-[#0d173b]" />
               </div>
             </div>
-            <div className="mt-4 pt-4 border-t border-gray-100">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">Last Updated</span>
-                <span className="text-sm font-medium text-[#0d173b]">
-                  {images.length > 0 
-                    ? new Date(images[images.length - 1].createdAt).toLocaleDateString()
-                    : 'Never'}
-                </span>
-              </div>
-            </div>
           </div>
         </div>
 
