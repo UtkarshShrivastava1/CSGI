@@ -2,8 +2,8 @@ import React from 'react'
 
 const Achievement = () => {
   return (
-    <div>
-      
+    <div className="bg-amber-100">
+      <h1>Achievement page</h1>
     </div>
   )
 }
