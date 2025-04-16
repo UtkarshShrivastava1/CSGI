@@ -161,9 +161,15 @@ const SchoolFooter = () => {
             Copyright © 2025 All rights reserved By CSIT
           </div>
           <div className="flex space-x-8">
-            <Link href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Privacy Policy</Link>
-            <Link href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Terms & Conditions</Link>
-            <Link href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Sitemap</Link>
+            <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Privacy Policy</a>
+            <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Terms & Conditions</a>
+            <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Sitemap</a>
+            <a
+              href="/admin-login"
+              className="text-gray-400 hover:text-gray-200 transition duration-300"
+            >
+              Admin
+            </a>
           </div>
           <div className="text-gray-400 mt-2 md:mt-0">
             Powered by <Link href="https://www.zager.in/" className="text-blue-400 hover:text-blue-300 transition duration-300" target="_blank" rel="noopener noreferrer">Zager Digital Services</Link>

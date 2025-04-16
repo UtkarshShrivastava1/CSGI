@@ -15,7 +15,7 @@ app.use(cors());
 
 // Routes
 app.use("/api/auth", require("./routes/AuthRoutes"));
-
+app.use("/api/gallery", require("./routes/galleryRoutes"));
 
 // Error Handling
 app.use(errorHandler);
