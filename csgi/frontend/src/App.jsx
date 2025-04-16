@@ -2,14 +2,14 @@
 import React from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-<<<<<<< HEAD
 import AboutPage from './pages/About/AboutIndex';
-import AdmissionPage from './pages/Admission/AdmissionIndex';
-import AdminLogin from './pages/Admin/AdminLogin';
+import AcademicPage from './pages/Academics/AcaedmicIndex';
 import AdminDashboard from './pages/Admin/AdminDasboard';
-import GalleryForm from './pages/Admin/GalleryForm';
+import AdminLogin from './pages/Admin/AdminLogin';
 import GalleryDashboard from './pages/Admin/GalleryDashboard';
+import GalleryForm from './pages/Admin/GalleryForm';
+import AdmissionPage from './pages/Admission/AdmissionIndex';
+import Home from './pages/Home';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -19,11 +19,7 @@ const ProtectedRoute = ({ children }) => {
   }
   return children;
 };
-=======
-import Cse from './pages/Academics/CSE/Index.jsx';
-import AIDS from './pages/Academics/AIandDs/Index.jsx';
-import Civil from './pages/Academics/CIVIL/Index.jsx';
->>>>>>> origin/Devendra
+
 
 function App() {
   return (
@@ -33,16 +29,11 @@ function App() {
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Home />} />
-<<<<<<< HEAD
-=======
-            <Route path="/cse" element={<Cse />} />
-            <Route path="/aids" element={<AIDS />} />
-            <Route path="/civil" element={<Civil />} />
-           
+
             {/* About page and its nested routes */}
->>>>>>> origin/Devendra
             <Route path="/about/*" element={<AboutPage />} />
             <Route path="/admission/*" element={<AdmissionPage />} />
+            <Route path="/academics/*" element={<AcademicPage />} />
 
             {/* Admin Routes */}
             <Route path="/admin-login" element={<AdminLogin />} />
@@ -87,6 +78,15 @@ function App() {
             <Route path="/admission-process" element={<Navigate to="/admission/admission-process" replace />} />
             <Route path="/leaflet" element={<Navigate to="/admission/leaflet" replace />} />
             <Route path="/help-desk" element={<Navigate to="/admission/help-desk" replace />} />
+
+            {/* Redirects for Academics section */}
+            <Route path="/computer-science-and-engineering" element={<Navigate to="/academics/computer-science-and-engineering" replace />} />
+            <Route path="/artificial-intelligence-and-data-engineering" element={<Navigate to="/academics/artificial-intelligence-and-data-engineering" replace />} />
+            <Route path="/civil-engineering" element={<Navigate to="/academics/civil-engineering" replace />} />
+            <Route path="/electrical-and-electronics-engineering" element={<Navigate to="/academics/electrical-and-electronics-engineering" replace />} />
+            <Route path="/mechatronics" element={<Navigate to="/academics/mechatronics" replace />} />
+            <Route path="/mechanical-engineering" element={<Navigate to="/academics/mechanical-engineering" replace />} />
+            <Route path="/information-technology-engineering" element={<Navigate to="/academics/information-technology-engineering" replace />} />
 
             {/* Catch-all route */}
             <Route path="*" element={<Navigate to="/" replace />} />
