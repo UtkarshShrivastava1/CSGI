@@ -12,6 +12,7 @@ import MessagePage from './Message/MessageIndex';
 import ProfessionalBodiesPage from './ProfessionalBodies';
 import SocietyPage from './Society';
 
+
 const sidebarLinks = [
   { name: 'Introduction', path: 'introduction' },
   { name: 'Society', path: 'society' },
@@ -20,7 +21,8 @@ const sidebarLinks = [
   { name: 'Professional Bodies', path: 'professional-bodies' },
   { name: 'Messages', path: 'message' },
   { name: 'Governing Body', path: 'governing-body' },
-  { name: 'Celebration', path: 'celebration' }
+  { name: 'Celebration', path: 'celebration' },
+ 
 ];
 
 export default function AboutPage() {
@@ -76,6 +78,7 @@ export default function AboutPage() {
                 <Route path="message" element={<MessagePage />} />
                 <Route path="governing-body" element={<GoverningBodyPage />} />
                 <Route path="celebration" element={<CelebrationPage />} />
+               
                 <Route index element={<Navigate to="introduction" replace />} />
                 <Route path="*" element={<Navigate to="introduction" replace />} />
               </Routes>
