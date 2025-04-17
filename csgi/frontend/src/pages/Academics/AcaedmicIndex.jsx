@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 import Aids from "./AIandDs/AI&DSIndex";
-import Civil from "./CIVIL/CivilIndex";
+import Civil from "./CIVIL/CIVILIndex";
 import Cse from "./CSE/CSEIndex";
 import Eee from "./EEE/EEEIndex";
 import It from "./IT/ITIndex";

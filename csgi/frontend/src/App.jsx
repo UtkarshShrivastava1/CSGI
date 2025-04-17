@@ -10,6 +10,7 @@ import GalleryDashboard from './pages/Admin/GalleryDashboard';
 import GalleryForm from './pages/Admin/GalleryForm';
 import AdmissionPage from './pages/Admission/AdmissionIndex';
 import Home from './pages/Home';
+import Cse from './pages/Campus/Facilities/StudentActivityCentre'
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -29,6 +30,7 @@ function App() {
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Home />} />
+            <Route path="/cse" element={<Cse />} />
 
             {/* About page and its nested routes */}
             <Route path="/about/*" element={<AboutPage />} />

@@ -29,7 +29,7 @@ const GoverningBody = () => {
   ];
 
   return (
-    <div className="bg-white shadow-lg rounded-md overflow-hidden">
+    <div className="bg-white  rounded-md overflow-hidden">
       {/* Header */}
       <div className="h-40 bg-gray-100 relative">
         <div className="absolute inset-0 flex items-center px-6">
@@ -47,7 +47,7 @@ const GoverningBody = () => {
 
       {/* Table Section */}
       <div className="p-6 overflow-x-auto">
-        <table className="min-w-full border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+        <table className="w-full border border-gray-200 rounded-lg overflow-hidden shadow-sm">
           <thead>
             <tr className="bg-[#0d173b] text-white text-left text-sm uppercase tracking-wider">
               <th className="px-6 py-3">S.No</th>

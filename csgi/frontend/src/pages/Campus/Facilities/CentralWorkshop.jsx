@@ -2,130 +2,170 @@ import React from 'react';
 
 export default function CentralWorkshop() {
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-gradient-to-br from-white to-gray-50 shadow-xl rounded-lg border border-gray-100">
-      <div className="text-center mb-10">
-        <h1 className="text-3xl font-bold text-gray-800 relative inline-block">
-          Central Workshop
-          <span className="absolute -bottom-2 left-0 right-0 h-1 bg-blue-600 rounded-full"></span>
-        </h1>
-        <p className="text-blue-600 mt-2">National Institute of Technology</p>
+    <div className="max-w-4xl mx-auto bg-white shadow-lg">
+      {/* Header Banner - Deep Navy Blue Background */}
+      <div className="bg-[#0d173b] text-white p-6">
+        <h1 className="text-3xl font-bold">Central Workshop</h1>
+        <p className="text-sm mt-1">CSIT | Engineering Excellence</p>
+        <hr className="w-16 border-t-2 border-white mt-2 mb-0" />
       </div>
       
-      <div className="mb-12">
-        <div className="bg-blue-50 p-6 rounded-lg shadow-sm">
-          <p className="leading-relaxed text-gray-700">
-            Central workshop is considered facility of the Institute and it is one among those that serve, 
-            support and enhances the academic activities. Central workshop at NIT is constantly engaged 
-            in providing facilities to conduct Engineering practicals, which may include in-house 
-            fabrication and assembly of various test rigs for different labs, repair, maintenance and 
-            modification if required to existing ones. The Central Workshop is situated at 910.92 Sq. Mts. 
-            area and it is well equipped with machines and tools. The facilities include 'Fitting Shop', 
-            'Welding Shop', 'Black Smithy Shop', Carpentry workshop in following the 7S standard practice for 
-            quality and safe environment. Human and equipment safety are the assets of the Central Workshop.
-          </p>
+      {/* Introduction Card */}
+      <div className="p-6 bg-white shadow-sm">
+        <p className="text-sm leading-relaxed text-gray-700">
+        Central Workshop is centralized facility of the Institute and it is one among those that serve, support and enhances the academic activities. Central workshop at CSIT is constantly engaged in providing feasible solution to complex Engineering problems, which may include in- house design and development. It also supports researchers in making their experimental set �ups and modifications if required in existing ones. The Central Workshop is spread in 588.30 Sq. Mtr. area and comprises of Machine shop, Welding Shop, Fitting Shop, Foundry Shop, Carpentry Shop, and Black Smithy Shop. Central workshop is following the 5S standard practice for proper workplace management. Trained and experienced staffs are the assets of this Central facility.
+        </p>
+      </div>
+      
+      {/* Workshop Sections */}
+      <div className="p-4 grid grid-cols-1 gap-6">
+        {/* Fitting Shop */}
+        <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex">
+          <div className="border-l-4 border-[#0d173b]"></div>
+          <div className="flex items-start p-4 w-full">
+            <div className="flex-shrink-0 mr-4">
+              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                <span className="text-2xl">🔧</span>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold mb-2">Fitting Shop</h2>
+              <p className="text-sm font-medium text-blue-600 mb-2">Details of equipments available in fitting shop:</p>
+              <ul className="text-sm text-gray-700 pl-5 list-disc space-y-2">
+                <li>Hydraulic Power Hacksaw</li>
+                <li>Bench Vise (110 and 200 mm) � 72 Nos.</li>
+                <li>Bench Drill Machine</li>
+                <li>Tap and Die</li>
+                <li>Try Square</li>
+                <li>Hand Vice and Hand Files</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        {/* Welding Shop */}
+        <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex">
+          <div className="border-l-4 border-[#0d173b]"></div>
+          <div className="flex items-start p-4 w-full">
+            <div className="flex-shrink-0 mr-4">
+              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                <span className="text-2xl">⚡</span>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold mb-2">Welding Shop</h2>
+              <p className="text-sm font-medium text-blue-600 mb-2">Details of equipment available in welding shop:</p>
+              <ul className="text-sm text-gray-700 pl-5 list-disc space-y-2">
+                <li>Welding Machine (Electric Arc)</li>
+                <li> Rectifier Machine</li>
+                <li>Spot Welding Machine</li>
+                <li>Transformer</li>
+                <li>Gas Welding</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        {/* Black Smithy Shop */}
+        <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex">
+          <div className="border-l-4 border-[#0d173b]"></div>
+          <div className="flex items-start p-4 w-full">
+            <div className="flex-shrink-0 mr-4">
+              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                <span className="text-2xl">🔨</span>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold mb-2">Black Smithy Shop</h2>
+              <p className="text-sm font-medium text-blue-600 mb-2">Details of equipments available in black smithy shop:</p>
+              <ul className="text-sm text-gray-700 pl-5 list-disc space-y-2">
+                <li> Furnace</li>
+                <li>Tong</li>
+                <li>Anvil</li>
+                <li>Swage Block</li>
+                <li>Hammers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        {/* Machine Shop */}
+        <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex">
+          <div className="border-l-4 border-[#0d173b]"></div>
+          <div className="flex items-start p-4 w-full">
+            <div className="flex-shrink-0 mr-4">
+              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                <span className="text-2xl">⚙️</span>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold mb-2">Machine Shop</h2>
+              <p className="text-sm font-medium text-blue-600 mb-2">Details of equipment available in machine shop:</p>
+              <ul className="text-sm text-gray-700 pl-5 list-disc space-y-2">
+                <li> Lathe machine: - Centre Lathe and Turret Lathe</li>
+                <li>Drill machine: - Impact Drill Machine, Radial Drill Machine and Hand Drill Machine</li>
+                <li> Grinding Machine: - Bench Grinding Machine (1 H.P and 3 H.P.) and Hand</li>
+                <li>Grinding Machine</li>
+                <li>Shaper Machine</li>
+                <li>Shearing Machine</li>
+                <li>Milling Machine</li>
+                <li>Power saw Machine</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        {/* Foundry Shop */}
+        <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex">
+          <div className="border-l-4 border-[#0d173b]"></div>
+          <div className="flex items-start p-4 w-full">
+            <div className="flex-shrink-0 mr-4">
+              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                <span className="text-2xl">🔥</span>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold mb-2">Foundry Shop</h2>
+              <p className="text-sm font-medium text-blue-600 mb-2">Details of equipments available in foundry shop:</p>
+              <ul className="text-sm text-gray-700 pl-5 list-disc space-y-2">
+                <li>Moulding Box and Tools</li>
+                <li> Pit Furnace (10 10)</li>
+                <li>Riddle</li>
+                <li>Pit furnace</li>
+                <li>Reamers</li>
+                <li>Ceramic Crucibles</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        {/* Carpentry Shop */}
+        <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex">
+          <div className="border-l-4 border-[#0d173b]"></div>
+          <div className="flex items-start p-4 w-full">
+            <div className="flex-shrink-0 mr-4">
+              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                <span className="text-2xl">🪚</span>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold mb-2">Carpentry Shop</h2>
+              <p className="text-sm font-medium text-blue-600 mb-2">Numerous wood cutting machines and equipments are available</p>
+              <ul className="text-sm text-gray-700 pl-5 list-disc space-y-2">
+                <li> Wood Working Lathe Machine</li>
+                <li>Fret Saw machine</li>
+                <li>Jack Planer</li>
+                <li>Pairing and Farmer Chisel</li>
+                <li>Tenon Saw</li>
+                <li>Rip Saw</li>
+                <li>Carpentry Vise</li>
+                <li>Rasp Files and Different Hand Files</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       
-      <div className="space-y-8">
-        {/* Fitting Shop Section */}
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold text-blue-700 mb-4 pb-2 border-b">
-            Fitting Shop
-          </h2>
-          <p className="mb-3 text-gray-600">Details of equipments available:</p>
-          <div className="grid md:grid-cols-2 gap-x-6 gap-y-2">
-            <div className="text-gray-700">• Hydraulic Power Hacksaw</div>
-            <div className="text-gray-700">• Pedestal Grinding Machine</div>
-            <div className="text-gray-700">• Bench Drill Machine</div>
-            <div className="text-gray-700">• Tap Set</div>
-            <div className="text-gray-700">• Die Set</div>
-            <div className="text-gray-700">• Flat, Half Round and Hand Files</div>
-          </div>
-        </div>
-        
-        {/* Welding Shop Section */}
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold text-blue-700 mb-4 pb-2 border-b">
-            Welding Shop
-          </h2>
-          <p className="mb-3 text-gray-600">Details of equipments available:</p>
-          <div className="grid md:grid-cols-2 gap-x-6 gap-y-2">
-            <div className="text-gray-700">• Welding Machine (Electric Arc)</div>
-            <div className="text-gray-700">• MIG Welding Machine</div>
-            <div className="text-gray-700">• Spot Welding Machine</div>
-            <div className="text-gray-700">• Gas Welding</div>
-          </div>
-        </div>
-        
-        {/* Black Smithy Shop Section */}
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold text-blue-700 mb-4 pb-2 border-b">
-            Black Smithy Shop
-          </h2>
-          <p className="mb-3 text-gray-600">Details of equipments available:</p>
-          <div className="grid md:grid-cols-2 gap-x-6 gap-y-2">
-            <div className="text-gray-700">• Anvil</div>
-            <div className="text-gray-700">• Forge</div>
-            <div className="text-gray-700">• Blower</div>
-            <div className="text-gray-700">• Tongs</div>
-          </div>
-        </div>
-        
-        {/* Machine Shop Section */}
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold text-blue-700 mb-4 pb-2 border-b">
-            Machine Shop
-          </h2>
-          <p className="mb-3 text-gray-600">Details of equipments available:</p>
-          <div className="grid grid-cols-1 gap-y-2">
-            <div className="text-gray-700">• Lathe machines: 3 types (Gero and Royal Ltd by Machine and Hand Feed Machine)</div>
-            <div className="text-gray-700">• Shaper Machine (L &amp; T)</div>
-            <div className="text-gray-700">• Capston Turner Machine (Grinding Machine) (17 HP inch TS) and Hand Feed</div>
-            <div className="text-gray-700">• Grinding Machine</div>
-            <div className="text-gray-700">• Shaper Machine</div>
-            <div className="text-gray-700">• Milling Machine</div>
-            <div className="text-gray-700">• Power saw Machine</div>
-          </div>
-        </div>
-        
-        {/* Foundry Shop Section */}
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold text-blue-700 mb-4 pb-2 border-b">
-            Foundry Shop
-          </h2>
-          <p className="mb-3 text-gray-600">Details of equipments available:</p>
-          <div className="grid md:grid-cols-2 gap-x-6 gap-y-2">
-            <div className="text-gray-700">• Cupola (10")</div>
-            <div className="text-gray-700">• Pit Furnace (1)</div>
-            <div className="text-gray-700">• Pit Laddle</div>
-            <div className="text-gray-700">• Core maker</div>
-            <div className="text-gray-700">• Patterns Moulder</div>
-          </div>
-        </div>
-        
-        {/* Carpentry Shop Section */}
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold text-blue-700 mb-4 pb-2 border-b">
-            Carpentry Shop
-          </h2>
-          <p className="mb-3 text-gray-600">Numerous wood cutting machines and equipments available:</p>
-          <div className="grid md:grid-cols-2 gap-x-6 gap-y-2">
-            <div className="text-gray-700">• Band saw machine</div>
-            <div className="text-gray-700">• Jig Saw machine</div>
-            <div className="text-gray-700">• Planer</div>
-            <div className="text-gray-700">• Joining and Circular Hand</div>
-            <div className="text-gray-700">• Rip Saw</div>
-            <div className="text-gray-700">• Radial Saw</div>
-            <div className="text-gray-700">• Plane Files and Different Hand Files</div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="mt-12 pt-6 border-t border-gray-200 text-center">
-        <div className="bg-blue-50 p-4 rounded-lg inline-block">
-          <p className="text-gray-600">© 2025 Central Workshop, National Institute of Technology</p>
-        </div>
-      </div>
     </div>
   );
 }
