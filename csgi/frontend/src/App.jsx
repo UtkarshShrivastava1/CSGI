@@ -11,6 +11,8 @@ import GalleryForm from './pages/Admin/GalleryForm';
 import AdmissionPage from './pages/Admission/AdmissionIndex';
 import Home from './pages/Home';
 import Cse from './pages/Campus/Facilities/StudentActivityCentre'
+import FacilitiesIndex from './pages/Campus/Facilities/Facilitiesindex';
+
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -36,6 +38,7 @@ function App() {
             <Route path="/about/*" element={<AboutPage />} />
             <Route path="/admission/*" element={<AdmissionPage />} />
             <Route path="/academics/*" element={<AcademicPage />} />
+            <Route path="/campus/facilities" element={<FacilitiesIndex />} /> {/* Facilities Route */}
 
             {/* Admin Routes */}
             <Route path="/admin-login" element={<AdminLogin />} />
@@ -89,6 +92,8 @@ function App() {
             <Route path="/mechatronics" element={<Navigate to="/academics/mechatronics" replace />} />
             <Route path="/mechanical-engineering" element={<Navigate to="/academics/mechanical-engineering" replace />} />
             <Route path="/information-technology-engineering" element={<Navigate to="/academics/information-technology-engineering" replace />} />
+
+            {/* Redirects for Campus section */}
 
             {/* Catch-all route */}
             <Route path="*" element={<Navigate to="/" replace />} />
