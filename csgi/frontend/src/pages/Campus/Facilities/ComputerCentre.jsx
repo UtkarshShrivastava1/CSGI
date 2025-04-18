@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ComputerCentreTable() {
   return (
-    <div className="max-w-4xl mx-auto p-6 font-sans">
+    <div className="min-h-screen w-full bg-gray-50 font-sans">
       <div className="bg-[#0d173b] text-white p-6">
         <h1 className="text-3xl font-bold">Computer Centre</h1>
         <p className="text-sm mt-1">CSIT | Information Dashboard</p>

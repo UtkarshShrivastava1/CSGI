@@ -10,7 +10,7 @@ import GalleryDashboard from './pages/Admin/GalleryDashboard';
 import GalleryForm from './pages/Admin/GalleryForm';
 import AdmissionPage from './pages/Admission/AdmissionIndex';
 import Home from './pages/Home';
-import Cse from './pages/Campus/Facilities/StudentActivityCentre'
+import Cse from './pages/Campus/Facilities/Facilitiesindex'
 import FacilitiesIndex from './pages/Campus/Facilities/Facilitiesindex';
 
 

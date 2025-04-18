@@ -5,7 +5,7 @@ export default function StudentActivityCenter() {
   const [activeTab, setActiveTab] = useState("cultural");
   
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-6 font-sans bg-white rounded-xl shadow-xl">
+    <div className="min-h-screen w-full bg-gray-50 font-sans">
       {/* Header with decorative elements */}
       <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-[#0d173b] via-[#0d173b] to-[#0d173b] p-6 mb-6">
     

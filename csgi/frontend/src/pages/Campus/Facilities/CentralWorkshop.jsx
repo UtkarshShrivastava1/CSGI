@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CentralWorkshop() {
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow-lg">
+    <div className="min-h-screen w-full bg-gray-50 font-sans">
       {/* Header Banner - Deep Navy Blue Background */}
       <div className="bg-[#0d173b] text-white p-6">
         <h1 className="text-3xl font-bold">Central Workshop</h1>
