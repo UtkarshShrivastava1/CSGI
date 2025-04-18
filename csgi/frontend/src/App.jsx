@@ -10,6 +10,8 @@ import AdminLogin from './pages/Admin/AdminLogin';
 import AdminDashboard from './pages/Admin/AdminDasboard';
 import GalleryForm from './pages/Admin/GalleryForm';
 import GalleryDashboard from './pages/Admin/GalleryDashboard';
+import Gallery from './pages/More/Gallery';
+import MorePage from './pages/More/MoreIndex';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -91,6 +93,23 @@ function App() {
             <Route path="/team-members" element={<Navigate to="/placement/team-members" replace />} />
             <Route path="/placement-statistics" element={<Navigate to="/placement/placement-statistics" replace />} />
             <Route path="/training-programme" element={<Navigate to="/placement/training-programme" replace />} />
+            
+            {/* Gallery routes - update to use the More section Gallery component */}
+            <Route path="/gallery/*" element={<MorePage />} />
+            <Route path="/gallery/upload" element={<GalleryForm />} />
+            <Route path="/gallery/manage" element={<GalleryDashboard />} />
+            
+            {/* More page and its nested routes */}
+            <Route path="/more/*" element={<MorePage />} />
+            
+            {/* Redirects for More section */}
+            <Route path="/student-affairs" element={<Navigate to="/more/student-affairs" replace />} />
+            <Route path="/research-and-development" element={<Navigate to="/more/research-and-development" replace />} />
+            <Route path="/calendar" element={<Navigate to="/more/calendar" replace />} />
+            <Route path="/feedback" element={<Navigate to="/more/feedback" replace />} />
+            <Route path="/grievances" element={<Navigate to="/more/grievances" replace />} />
+            <Route path="/iqac" element={<Navigate to="/more/iqac" replace />} />
+            <Route path="/rti" element={<Navigate to="/more/rti" replace />} />
             
             {/* Catch all route - redirect to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
