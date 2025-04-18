@@ -15,7 +15,7 @@ export default function LibraryInformationPage() {
   return (
     <div className="min-h-screen w-full bg-gray-50 font-sans">
       {/* Header Banner */}
-      <div className="bg-blue-900 text-white p-6 md:p-8 mb-6">
+      <div className="bg-[#0d173b] text-white p-6 md:p-8 mb-6">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-2xl md:text-4xl font-bold text-center">
             Central Library
@@ -53,7 +53,7 @@ export default function LibraryInformationPage() {
         {/* Ranganathan Reference Section Card */}
         <div className="bg-blue-50 p-4 md:p-6 rounded-lg shadow-sm mb-8 border-l-4 border-blue-900">
           <div className="flex items-center mb-2">
-            <BookOpen className="text-blue-900 mr-3" size={24} />
+            <BookOpen className="text-[#0d173b] mr-3" size={24} />
             <h2 className="text-lg md:text-xl font-bold text-blue-900">
               Ranganathan Reference Section
             </h2>
@@ -72,10 +72,10 @@ export default function LibraryInformationPage() {
           <table className="min-w-full border border-gray-300">
             <thead>
               <tr className="bg-gray-100">
-                <th className="border px-4 py-2 text-left w-20 bg-blue-900 text-white">
+                <th className="border px-4 py-2 text-left w-20 bg-[#0d173b] text-white">
                   S.No.
                 </th>
-                <th className="border px-4 py-2 text-left bg-blue-900 text-white">
+                <th className="border px-4 py-2 text-left bg-[#0d173b] text-white">
                   Description
                 </th>
               </tr>

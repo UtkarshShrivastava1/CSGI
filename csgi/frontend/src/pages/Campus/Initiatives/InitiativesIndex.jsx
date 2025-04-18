@@ -9,57 +9,46 @@ import {
   Target
 } from "lucide-react";
 
-import Library from './CentralLibrary';
-import Workshop from './CentralWorkshop';
-import ComputerCentre from './ComputerCentre';
-import CanteenCafe from './CanteenAndCafe'
-import StudentActivity from './StudentActivityCentre'
-import SeminarHall from './SeminarHall'
-import Hostel from './HostelAndOthers'
+import Startups from './Startups';
+import Nptl from './NPTEL'
+import Nss from './NSS'
+import Swar from './SWAR'
+import Otherclub from './OtherClubs'
 import Navbar from '../../../components/Navbar';
 import Header from "../../../components/Header";
 
 export default function ModernDepartmentPage() {
-  const [activeTab, setActiveTab] = useState("Library");
+  const [activeTab, setActiveTab] = useState("startup");
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   // Content data for tabs
   const tabContent = {
-    Library: {
-      title: "Central Library",
+    startup: {
+      title: "Startup",
       icon: <BookOpen className="text-indigo-500" />,
-      content: <Library />,
+      content: <Startups />,
     },
-    Workshop: {
-      title: "Central Workshop",
+    nptl: {
+      title: "NPTL",
       icon: <Beaker className="text-emerald-500" />,
-      content: <Workshop/>,
+      content: <Nptl/>,
     },
-    ComputerCentre: {
-      title: "Computer Centre",
+    nss: {
+      title: "NSS",
       icon: <BookOpen className="text-amber-500" />,
-      content: <ComputerCentre />,
+      content: <Nss />,
     },
-    CanteenCafe: {
-      title: "Canteen & Cafe",
+    swar: {
+      title: "SWAR",
       icon: <Briefcase className="text-rose-500" />,
-      content: <CanteenCafe />,
+      content: <Swar />,
     },
-    StudentActivity: {
-      title: "Student Activity Centre",
+    otherclub: {
+      title: "Otherclub",
       icon: <Users className="text-blue-500" />,
-      content: <StudentActivity />,
+      content: <Otherclub />,
     },
-    SeminarHall: {
-      title: "Seminar Hall",
-      icon: <Target className="text-purple-500" />,
-      content: <SeminarHall />,
-    },
-    Hostal: {
-      title: "Hostel & Other Facilities",
-      icon: <Users className="text-green-500" />,
-      content: <Hostel />,
-    },
+   
   };
 
   return (
@@ -90,13 +79,13 @@ export default function ModernDepartmentPage() {
 
       {/* Left navigation sidebar - styled according to image */}
       <div
-        className={`fixed lg:sticky top-0 left-0 z-40 w-64 h-113 transition-transform duration-300 transform 
+        className={`fixed lg:sticky top-0 left-0 z-40 w-64 h-86 transition-transform duration-300 transform 
         ${mobileSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         bg-white shadow-md flex-shrink-0 flex flex-col rounded-md lg:mx-4 lg:my-4 overflow-hidden`}
       >
         {/* Dark header */}
         <div className="bg-gray-900 text-white px-6 py-4">
-          <h2 className="text-xl font-bold">Campus Facilities</h2>
+          <h2 className="text-xl font-bold">Initiatives</h2>
         </div>
         
         {/* Navigation menu items */}

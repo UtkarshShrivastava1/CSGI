@@ -23,14 +23,14 @@ export default function StudentActivityCenter() {
       {/* Navigation Tabs */}
       <div className="flex mb-6 border-b">
         <button 
-          className={`px-4 py-3 flex items-center font-semibold transition-all ${activeTab === "cultural" ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-500 hover:text-blue-600"}`}
+          className={`px-4 py-3 flex items-center font-semibold transition-all ${activeTab === "cultural" ? "text-[#0d173b] border-b-2 border-blue-600" : "text-gray-500 hover:text-[#0d173b]"}`}
           onClick={() => setActiveTab("cultural")}
         >
           <Award className="mr-2" size={18} />
           Cultural
         </button>
         <button 
-          className={`px-4 py-3 flex items-center font-semibold transition-all ${activeTab === "sports" ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-500 hover:text-blue-600"}`}
+          className={`px-4 py-3 flex items-center font-semibold transition-all ${activeTab === "sports" ? "text-[#0d173b] border-b-2 border-blue-600" : "text-gray-500 hover:text-[#0d173b]"}`}
           onClick={() => setActiveTab("sports")}
         >
           <Users className="mr-2" size={18} />
@@ -85,7 +85,7 @@ export default function StudentActivityCenter() {
           <div className="animate-fadeIn">
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-5 mb-6 border border-blue-100 shadow-sm">
               <h2 className="text-xl font-bold text-blue-900 mb-4 flex items-center">
-                <Users className="mr-2 text-blue-700" size={22} />
+                <Users className="mr-2 text-[#0d173b]" size={22} />
                 Sports Activity
               </h2>
               <p className="mb-4 text-gray-700 leading-relaxed">
@@ -96,7 +96,7 @@ export default function StudentActivityCenter() {
             
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-                <div className="bg-blue-700 text-white p-3">
+                <div className="bg-[#0d173b] text-white p-3">
                   <h3 className="font-semibold">Outdoor Facilities</h3>
                 </div>
                 <div className="p-4">
@@ -108,7 +108,7 @@ export default function StudentActivityCenter() {
                       "Handball Court"
                     ].map((facility, index) => (
                       <li key={index} className="flex items-center">
-                        <div className="w-2 h-2 rounded-full bg-blue-600 mr-3"></div>
+                        <div className="w-2 h-2 rounded-full bg-[#0d173b] mr-3"></div>
                         <span>{facility}</span>
                       </li>
                     ))}
@@ -117,7 +117,7 @@ export default function StudentActivityCenter() {
               </div>
               
               <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-                <div className="bg-blue-700 text-white p-3">
+                <div className="bg-[#0d173b] text-white p-3">
                   <h3 className="font-semibold">Indoor Facilities</h3>
                 </div>
                 <div className="p-4">
@@ -129,7 +129,7 @@ export default function StudentActivityCenter() {
                       "Badminton Court"
                     ].map((facility, index) => (
                       <li key={index} className="flex items-center">
-                        <div className="w-2 h-2 rounded-full bg-blue-600 mr-3"></div>
+                        <div className="w-2 h-2 rounded-full bg-[#0d173b] mr-3"></div>
                         <span>{facility}</span>
                       </li>
                     ))}

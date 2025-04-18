@@ -10,8 +10,9 @@ import GalleryDashboard from './pages/Admin/GalleryDashboard';
 import GalleryForm from './pages/Admin/GalleryForm';
 import AdmissionPage from './pages/Admission/AdmissionIndex';
 import Home from './pages/Home';
-import Cse from './pages/Campus/Facilities/Facilitiesindex'
+import Cse from './pages/Campus/Initiatives/NPTEL'
 import FacilitiesIndex from './pages/Campus/Facilities/Facilitiesindex';
+import InitiativesIndex from './pages/Campus/Initiatives/InitiativesIndex';
 
 
 // Protected Route Component
@@ -39,6 +40,7 @@ function App() {
             <Route path="/admission/*" element={<AdmissionPage />} />
             <Route path="/academics/*" element={<AcademicPage />} />
             <Route path="/campus/facilities" element={<FacilitiesIndex />} /> {/* Facilities Route */}
+            <Route path="/campus/initiatives" element={<InitiativesIndex />} /> {/* Initiatives Route */}
 
             {/* Admin Routes */}
             <Route path="/admin-login" element={<AdminLogin />} />

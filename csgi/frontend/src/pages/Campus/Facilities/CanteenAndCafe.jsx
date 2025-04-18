@@ -3,7 +3,7 @@ import React from "react";
 export default function CanteenCafeInfo() {
   return (
     <div className="min-h-screen w-full bg-gray-50 font-sans">
-      <div className="bg-blue-900 text-white p-6 md:p-8">
+      <div className="bg-[#0d173b] text-white p-6 md:p-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold">Canteen & Cafe</h1>
           <p className="text-sm md:text-base mt-1">CSIT | Information Dashboard</p>
