@@ -409,16 +409,6 @@ const GalleryDashboard = () => {
                 <ImagePlus className="w-8 h-8 text-[#0d173b]" />
               </div>
             </div>
-            <div className="mt-4 pt-4 border-t border-gray-100">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">Last Updated</span>
-                <span className="text-sm font-medium text-[#0d173b]">
-                  {images.length > 0 
-                    ? new Date(images[images.length - 1].createdAt).toLocaleDateString()
-                    : 'Never'}
-                </span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -437,10 +427,10 @@ const GalleryDashboard = () => {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
             {images.map((image) => (
               <div key={image._id} className="group relative">
-                <div className="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg border border-gray-100">
+                <div className="bg-white rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-md border border-gray-100">
                   <div className="relative aspect-square">
                     <img
                       src={image.url}
@@ -450,22 +440,22 @@ const GalleryDashboard = () => {
                         e.target.src = "https://via.placeholder.com/300x300?text=Image+Not+Found";
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                      <div className="flex justify-end gap-3 mb-4">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                      <div className="flex justify-end gap-3 mb-2">
                         <button
                           onClick={() => handleViewImage(image)}
-                          className="bg-white/20 text-white p-2 rounded-full hover:bg-white/30 transition-colors backdrop-blur-sm"
+                          className="bg-white/20 text-white p-1.5 rounded-full hover:bg-white/30 transition-colors backdrop-blur-sm"
                         >
-                          <Eye size={20} />
+                          <Eye size={16} />
                         </button>
                         <button
                           onClick={() => handleDelete(image._id)}
-                          className="bg-white/20 text-white p-2 rounded-full hover:bg-white/30 transition-colors backdrop-blur-sm"
+                          className="bg-white/20 text-white p-1.5 rounded-full hover:bg-white/30 transition-colors backdrop-blur-sm"
                         >
-                          <Trash2 size={20} />
+                          <Trash2 size={16} />
                         </button>
                       </div>
-                      <div className="text-white text-sm bg-black/20 backdrop-blur-sm px-3 py-2 rounded-lg">
+                      <div className="text-white text-xs bg-black/20 backdrop-blur-sm px-3 py-2 rounded-lg">
                         Uploaded on {new Date(image.createdAt).toLocaleDateString()}
                       </div>
                     </div>

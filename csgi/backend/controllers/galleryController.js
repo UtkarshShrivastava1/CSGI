@@ -107,6 +107,62 @@ const uploadImage = async (req, res) => {
   }
 };
 
+const uploadMultipleImages = async (req, res) => {
+  try {
+    // Validation
+    if (!req.files || req.files.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: 'At least one image file is required'
+      });
+    }
+
+    const uploadResults = [];
+    const failedUploads = [];
+
+    // Process each file upload in parallel
+    const uploadPromises = req.files.map(async (file) => {
+      try {
+        const imageData = await uploadToCloudinary(file);
+        const newImage = await Gallery.create({
+          image: imageData
+        });
+        
+        uploadResults.push({
+          id: newImage._id,
+          image: newImage.image,
+          createdAt: newImage.createdAt
+        });
+      } catch (err) {
+        console.error(`Error uploading file: ${file.originalname}`, err);
+        failedUploads.push({
+          fileName: file.originalname,
+          error: err.message
+        });
+      }
+    });
+
+    // Wait for all uploads to complete
+    await Promise.all(uploadPromises);
+
+    // Return response with results
+    res.status(201).json({
+      success: true,
+      uploadedCount: uploadResults.length,
+      failedCount: failedUploads.length,
+      data: uploadResults,
+      failedUploads: failedUploads.length > 0 ? failedUploads : undefined
+    });
+
+  } catch (error) {
+    console.error('Error uploading multiple images:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Server error uploading images'
+    });
+  }
+};
+
 const deleteImage = async (req, res) => {
   try {
     const image = await Gallery.findById(req.params.id);
@@ -147,5 +203,6 @@ module.exports = {
   getAllImages,
   getImageById,
   uploadImage,
+  uploadMultipleImages,
   deleteImage
 };
