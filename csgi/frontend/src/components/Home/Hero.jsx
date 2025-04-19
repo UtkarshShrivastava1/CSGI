@@ -57,7 +57,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-white overflow-hidden">
       <style>{customStyles}</style>
       <Swiper
         spaceBetween={0}
@@ -74,12 +74,15 @@ const Hero = () => {
         className="hero-swiper"
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <img
-              src={slide.image}
-              alt={slide.alt}
-              className="w-full h-[550px] object-cover"
-            />
+          <SwiperSlide key={index} className="flex items-center justify-center">
+            <div className="w-full max-w-[1920px] mx-auto">
+              <img
+                src={slide.image}
+                alt={slide.alt}
+                className="w-full h-auto object-contain"
+                style={{ maxHeight: "80vh" }}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

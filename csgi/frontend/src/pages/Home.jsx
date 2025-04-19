@@ -23,7 +23,6 @@ const Home = () => {
       <AboutSection />
       <GallerySection />
       <MediaCoverage />
-      <div className="container mx-auto my-8 border-b border-gray-300"></div>
       <VideoGallery />
       <CompaniesVisited />
       <PlacementStats />

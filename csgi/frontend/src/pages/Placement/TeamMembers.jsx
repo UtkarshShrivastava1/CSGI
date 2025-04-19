@@ -4,14 +4,12 @@ const TeamMembers = () => {
   // Array of team member images
   const teamMembers = [
     {
-      image: 'cb044289a2b8b0a9f9a4bb3f31b2193f.png'
+      image: '236b90ec61b8cc28a5b25f1d60caea44 (1).png'
     },
     {
       image: 'eb1982d65352b46c09fdf0b62a4a08f1.png'
-    },
-    {
-      image: '236b90ec61b8cc28a5b25f1d60caea44 (1).png'
     }
+    
   ];
 
   return (
