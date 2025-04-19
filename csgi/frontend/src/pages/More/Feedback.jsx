@@ -6,11 +6,12 @@ const Feedback = () => {
     <div className="w-full">
       {/* Header Section */}
       <header className="bg-gradient-to-r from-[#0d173b] to-[#1a2b5f] text-white py-8 mb-8 rounded-lg">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-4xl font-serif font-bold mb-2">Stakeholder Feedback</h1>
-          <p className="text-base text-gray-300 max-w-2xl mx-auto">
-            Share your valuable feedback to help us improve our services and facilities
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Feedback</h1>
+          <p className="text-base text-gray-200 mt-2">
+            Share your thoughts and help us improve
           </p>
+          <div className="h-0.5 w-12 bg-white mt-3"></div>
         </div>
       </header>
 
