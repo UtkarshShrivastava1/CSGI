@@ -1,17 +1,24 @@
 import React from 'react';
 import { FileText } from 'lucide-react';
+// Import all calendar PDF files
+import calendar2018_19 from '../../assets/calendar/2018-19.pdf';
+import calendar2019_20 from '../../assets/calendar/2019-20.pdf';
+import calendar2020_21 from '../../assets/calendar/2020-21.pdf';
+import calendar2021_22 from '../../assets/calendar/2021-22.pdf';
+import calendar2022_23 from '../../assets/calendar/2022-23.pdf';
+import calendar2023_24 from '../../assets/calendar/2023-24.pdf';
+import calendar2024_25 from '../../assets/calendar/2024-25.pdf';
 
 const Calendar = () => {
-  // Data for the academic calendar table
-  // These links can be updated in the future when PDFs are available
+  // Data for the academic calendar table with actual PDF links
   const calendarData = [
-    { year: '2024 - 2025', link: '#' },
-    { year: '2023 - 2024', link: '#' },
-    { year: '2022 - 2023', link: '#' },
-    { year: '2021 - 2022', link: '#' },
-    { year: '2020 - 2021', link: '#' },
-    { year: '2019 - 2020', link: '#' },
-    { year: '2018 - 2019', link: '#' },
+    { year: '2024 - 2025', link: calendar2024_25 },
+    { year: '2023 - 2024', link: calendar2023_24 },
+    { year: '2022 - 2023', link: calendar2022_23 },
+    { year: '2021 - 2022', link: calendar2021_22 },
+    { year: '2020 - 2021', link: calendar2020_21 },
+    { year: '2019 - 2020', link: calendar2019_20 },
+    { year: '2018 - 2019', link: calendar2018_19 },
   ];
 
   return (
@@ -67,9 +74,6 @@ const Calendar = () => {
                 </tbody>
               </table>
             </div>
-            <p className="text-sm text-gray-500 mt-4 italic">
-              Note: PDF links will be updated in the future. To add links, update the 'link' property in the calendarData array.
-            </p>
           </div>
         </div>
       </div>

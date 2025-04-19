@@ -1,44 +1,60 @@
 import React from 'react';
 import { FileText } from 'lucide-react';
+// Import all IQAC composition PDF files
+import iqac2018_19 from '../../assets/IQAC_composition/IQAC_2018-19_composition.pdf';
+import iqac2019_20 from '../../assets/IQAC_composition/IQAC_2019-20_Composition.pdf';
+import iqac2020_21 from '../../assets/IQAC_composition/IQAC_2020-21_Composition.pdf';
+import iqac2021_22 from '../../assets/IQAC_composition/IQAC_2021-22_Composition.pdf';
+import iqac2022_23 from '../../assets/IQAC_composition/IQAC_2022-23_Composition.pdf';
+import iqac2023_24 from '../../assets/IQAC_composition/IQAC_2023-24_Composition.pdf';
+import iqac2024_25 from '../../assets/IQAC_composition/IQAC_2024-25_Composition.pdf';
+
+// Import all IQAC Minutes of Meeting PDF files
+import iqacMom2018_19 from '../../assets/IQAC_mom/IQAC 2018-19 Meeting 1, 2 ,3.pdf';
+import iqacMom2019_20 from '../../assets/IQAC_mom/IQAC 2019-20 Minutes 1 2 3 4.pdf';
+import iqacMom2020_21 from '../../assets/IQAC_mom/IQAC 2020-21 Meeting 1 2 3.pdf';
+import iqacMom2021_22 from '../../assets/IQAC_mom/IQAC 2021-22 Meeting 1 ,2.pdf';
+import iqacMom2022_23 from '../../assets/IQAC_mom/IQAC 2022-23 Meeting 1 ,2 ,3.pdf';
+import iqacMom2023_24 from '../../assets/IQAC_mom/IQAC 2023-24 Meeting 1, 2, 3.pdf';
+
 
 const IQAC = () => {
-  // Data for the composition and minutes of meeting table
-  // These links can be updated in the future when PDFs are available
+  // Data for the composition and minutes of meeting table with actual PDF links
   const iqacData = [
     { 
       year: '2018-2019', 
-      composition: { text: 'View', link: '#' }, 
-      mom: { text: 'View', link: '#' } 
+      composition: { text: 'View', link: iqac2018_19 }, 
+      mom: { text: 'View', link: iqacMom2018_19 } 
     },
     { 
       year: '2019-2020', 
-      composition: { text: 'View', link: '#' }, 
-      mom: { text: 'View', link: '#' } 
+      composition: { text: 'View', link: iqac2019_20 }, 
+      mom: { text: 'View', link: iqacMom2019_20 } 
     },
     { 
       year: '2020-2021', 
-      composition: { text: 'View', link: '#' }, 
-      mom: { text: 'View', link: '#' } 
+      composition: { text: 'View', link: iqac2020_21 }, 
+      mom: { text: 'View', link: iqacMom2020_21 } 
     },
     { 
       year: '2021-2022', 
-      composition: { text: 'View', link: '#' }, 
-      mom: { text: 'View', link: '#' } 
+      composition: { text: 'View', link: iqac2021_22 }, 
+      mom: { text: 'View', link: iqacMom2021_22 } 
     },
     { 
       year: '2022-2023', 
-      composition: { text: 'View', link: '#' }, 
-      mom: { text: 'View', link: '#' } 
+      composition: { text: 'View', link: iqac2022_23 }, 
+      mom: { text: 'View', link: iqacMom2022_23 } 
     },
     { 
       year: '2023-2024', 
-      composition: { text: 'View', link: '#' }, 
-      mom: { text: 'View', link: '#' } 
+      composition: { text: 'View', link: iqac2023_24 }, 
+      mom: { text: 'View', link: iqacMom2023_24 } 
     },
     { 
       year: '2024-2025', 
-      composition: { text: 'View', link: '#' }, 
-      mom: { text: 'View', link: '#' } 
+      composition: { text: 'View', link: iqac2024_25 }, 
+      mom: { text: 'Not Available', link: null } 
     },
   ];
 
