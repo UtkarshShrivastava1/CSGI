@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../assets/csitlogo.png';
 import { FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { HiLocationMarker, HiMail, HiPhone } from 'react-icons/hi';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const SchoolFooter = () => {
   return (
@@ -24,41 +24,41 @@ const SchoolFooter = () => {
           </div>
           
           <div className="flex space-x-4">
-            <Link href="https://www.instagram.com/csgidurg/" 
+            <a href="https://www.instagram.com/csgidurg/" 
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="Instagram"
                target="_blank"
                rel="noopener noreferrer">
               <FaInstagram className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
-            </Link>
-            <Link href="https://www.facebook.com/csgidurg.in"
+            </a>
+            <a href="https://www.facebook.com/csgidurg.in"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="Facebook"
                target="_blank"
                rel="noopener noreferrer">
               <FaFacebookF className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
-            </Link>
-            <Link href="https://www.youtube.com/channel/UCp_whb0YhFgOSYofgSVQjuA/videos"
+            </a>
+            <a href="https://www.youtube.com/channel/UCp_whb0YhFgOSYofgSVQjuA/videos"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="YouTube"
                target="_blank"
                rel="noopener noreferrer">
               <FaYoutube className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
-            </Link>
-            <Link href="https://www.linkedin.com/in/chhatrapati-shivaji-group-of-institutions-durg-9909173b/"
+            </a>
+            <a href="https://www.linkedin.com/in/chhatrapati-shivaji-group-of-institutions-durg-9909173b/"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="LinkedIn"
                target="_blank"
                rel="noopener noreferrer">
               <FaLinkedinIn className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
-            </Link>
-            <Link href="https://x.com/DurgCsit"
+            </a>
+            <a href="https://x.com/DurgCsit"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="Twitter"
                target="_blank"
                rel="noopener noreferrer">
               <FaTwitter className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -70,11 +70,11 @@ const SchoolFooter = () => {
               <span className="border-b-2 border-blue-400 pb-1">About</span>
             </h3>
             <ul className="space-y-2">
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">About CSIT</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Students Associations</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Industrial Visit</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">SWAR</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">News Letter</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">About CSIT</Link></li>
+              <li><Link to="/students-associations" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Students Associations</Link></li>
+              <li><Link to="/industrial-visit" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Industrial Visit</Link></li>
+              <li><Link to="/swar" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">SWAR</Link></li>
+              <li><Link to="/news-letter" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">News Letter</Link></li>
             </ul>
           </div>
           
@@ -84,11 +84,11 @@ const SchoolFooter = () => {
               <span className="border-b-2 border-blue-400 pb-1">Academics</span>
             </h3>
             <ul className="space-y-2">
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Academic Calendar</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Courses Offered</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Admission Processes</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NPTEL</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NIRF 2024</Link></li>
+              <li><Link to="/academic-calendar" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Academic Calendar</Link></li>
+              <li><Link to="/courses-offered" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Courses Offered</Link></li>
+              <li><Link to="/admission-processes" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Admission Processes</Link></li>
+              <li><Link to="/nptel" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NPTEL</Link></li>
+              <li><Link to="/nirf-2024" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NIRF 2024</Link></li>
             </ul>
           </div>
           
@@ -98,11 +98,11 @@ const SchoolFooter = () => {
               <span className="border-b-2 border-blue-400 pb-1">Mandatory Information</span>
             </h3>
             <ul className="space-y-2">
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Anti-Ragging</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Mandatory Disclosure</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">RTI</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NSS</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">FUNDS & GRANTS</Link></li>
+              <li><Link to="/anti-ragging" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Anti-Ragging</Link></li>
+              <li><Link to="/mandatory-disclosure" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Mandatory Disclosure</Link></li>
+              <li><Link to="/rti" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">RTI</Link></li>
+              <li><Link to="/nss" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NSS</Link></li>
+              <li><Link to="/funds-grants" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">FUNDS & GRANTS</Link></li>
             </ul>
           </div>
           
@@ -116,38 +116,38 @@ const SchoolFooter = () => {
                 <div className="bg-blue-900 p-2 rounded-md mr-3 flex-shrink-0 mt-1">
                   <HiLocationMarker className="h-5 w-5 text-blue-300" style={{ fontSize: '1.25rem' }} />
                 </div>
-                <Link 
-        href="https://www.google.com/maps/place/CSIT+Durg/@21.1482141,81.2611754,722m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a293bf98e611daf:0x9aeb86912d1db8e7!8m2!3d21.1482141!4d81.2611754!16s%2Fm%2F076xq1f?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="text-gray-300 text-sm hover:text-blue-300 transition duration-300"
-      >
-        Shivaji Nagar, Balod Road Durg, Chhattisgarh 491001
-      </Link>
+                <a 
+                  href="https://www.google.com/maps/place/CSIT+Durg/@21.1482141,81.2611754,722m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a293bf98e611daf:0x9aeb86912d1db8e7!8m2!3d21.1482141!4d81.2611754!16s%2Fm%2F076xq1f?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-300 text-sm hover:text-blue-300 transition duration-300"
+                >
+                  Shivaji Nagar, Balod Road Durg, Chhattisgarh 491001
+                </a>
               </li>
               <li className="flex items-center">
                 <div className="bg-blue-900 p-2 rounded-md mr-3 flex-shrink-0">
                   <HiMail className="h-5 w-5 text-blue-300" style={{ fontSize: '1.25rem' }} />
                 </div>
-                <Link href="mailto:registrar@csitdurg.in" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">registrar@csitdurg.in</Link>
+                <a href="mailto:registrar@csitdurg.in" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">registrar@csitdurg.in</a>
               </li>
               <li className="flex items-center">
                 <div className="bg-blue-900 p-2 rounded-md mr-3 flex-shrink-0">
                   <HiMail className="h-5 w-5 text-blue-300" style={{ fontSize: '1.25rem' }} />
                 </div>
-                <Link href="mailto:info@csitdurg.in" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">info@csitdurg.in</Link>
+                <a href="mailto:info@csitdurg.in" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">info@csitdurg.in</a>
               </li>
               <li className="flex items-center">
                 <div className="bg-blue-900 p-2 rounded-md mr-3 flex-shrink-0">
                   <HiPhone className="h-5 w-5 text-blue-300" style={{ fontSize: '1.25rem' }} />
                 </div>
-                <Link href="tel:+918966000059" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">+91 89660 00059</Link>
+                <a href="tel:+918966000059" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">+91 89660 00059</a>
               </li>
               <li className="flex items-center">
                 <div className="bg-blue-900 p-2 rounded-md mr-3 flex-shrink-0">
                   <HiPhone className="h-5 w-5 text-blue-300" style={{ fontSize: '1.25rem' }} />
                 </div>
-                <Link href="tel:+918966000102" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">+91 89660 00102</Link>
+                <a href="tel:+918966000102" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">+91 89660 00102</a>
               </li>
             </ul>
           </div>
@@ -161,18 +161,12 @@ const SchoolFooter = () => {
             Copyright © 2025 All rights reserved By CSIT
           </div>
           <div className="flex space-x-8">
-            <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Terms & Conditions</a>
-            <a href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Sitemap</a>
-            <a
-              href="/admin-login"
-              className="text-gray-400 hover:text-gray-200 transition duration-300"
-            >
-              Admin
-            </a>
+            <Link to="/privacy-policy" className="text-gray-400 hover:text-gray-200 transition duration-300">Privacy Policy</Link>
+            <Link to="/terms-conditions" className="text-gray-400 hover:text-gray-200 transition duration-300">Terms & Conditions</Link>
+            <Link to="/sitemap" className="text-gray-400 hover:text-gray-200 transition duration-300">Sitemap</Link>
           </div>
           <div className="text-gray-400 mt-2 md:mt-0">
-            Powered by <Link href="https://www.zager.in/" className="text-blue-400 hover:text-blue-300 transition duration-300" target="_blank" rel="noopener noreferrer">Zager Digital Services</Link>
+            Powered by <a href="https://www.zager.in/" className="text-blue-400 hover:text-blue-300 transition duration-300" target="_blank" rel="noopener noreferrer">Zager Digital Services</a>
           </div>
         </div>
       </div>
