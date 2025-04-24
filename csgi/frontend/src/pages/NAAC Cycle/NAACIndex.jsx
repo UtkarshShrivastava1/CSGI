@@ -3,33 +3,54 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';
 import Sidebar from '../../components/Sidebar';
-import Gallery from './Gallery';
-import Grievances from './Grievances';
-import RTI from './RTI';
-import Feedback from './Feedback';
-import IQAC from './IQAC';
-import Calendar from './Calendar';
-import StudentAffairsIndex from './Student affairs/StudentAffairsIndex';
+import AQAR from './AQAR';
+import NaacCycle1 from './NAAC-Cycle1';
+// import NaacCycle2 from './NAAC-Cycle2';
+// import NaacCycle3 from './NAAC-Cycle3';
 
 const sidebarLinks = [
-  { name: 'Student Affairs', path: 'student-affairs' },
-  { name: 'R&D', path: 'research-and-development' },
-  { name: 'Calendar', path: 'calendar' },
-  { name: 'Feedback', path: 'feedback' },
-  { name: 'Gallery', path: 'gallery' },
-  { name: 'Grievances', path: 'grievances' },
-  { name: 'IQAC', path: 'iqac' },
-  { name: 'RTI', path: 'rti' },
+  { name: 'NAAC Cycle 1', path: 'naac-cycle-1' },
+  // { name: 'NAAC Cycle 2', path: 'naac-cycle-2' },
+  // { name: 'NAAC Cycle 3', path: 'naac-cycle-3' },
+  { name: 'AQAR', path: 'AQAR' }
 ];
 
-export default function MorePage() {
+// Sample data for NAAC Cycle 1
+const naacCycle1Data = [
+  {
+    id: 1,
+    title: 'Self Study Report (SSR)',
+    category: 'SSR',
+    cycle: 'Cycle 1',
+    date: '2023-01-15',
+    pdfUrl: '/documents/naac/cycle1/ssr.pdf'
+  },
+  {
+    id: 2,
+    title: 'Data Verification Visit Report',
+    category: 'DVV',
+    cycle: 'Cycle 1',
+    date: '2023-02-20',
+    pdfUrl: '/documents/naac/cycle1/dvv.pdf'
+  },
+  {
+    id: 3,
+    title: 'Annual Quality Assurance Report',
+    category: 'AQAR',
+    cycle: 'Cycle 1',
+    date: '2023-03-10',
+    pdfUrl: '/documents/naac/cycle1/aqar.pdf'
+  }
+];
+
+export default function NAACPage() {
   const location = useLocation();
   
   // Determine active section based on current path
   const getActiveSection = () => {
     const path = location.pathname.split('/').pop();
     const activeLink = sidebarLinks.find(link => link.path === path);
-    return activeLink ? activeLink.name : 'Student Affairs';
+    return activeLink ? activeLink.name : 'NAAC Cycle 1';
   };
 
   return (
@@ -45,10 +66,8 @@ export default function MorePage() {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-[#0d173b] to-[#1e305f] text-white w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h1 className="text-3xl md:text-4xl font-bold">More</h1>
-          <p className="mt-3 text-base md:text-lg font-light">
-            Explore additional resources and information about CSIT
-          </p>
+          <h1 className="text-3xl md:text-4xl font-bold">NAAC Cycle</h1>
+          <p className="mt-3 text-base md:text-lg font-light">Shaping the future through excellence in technical education since 1999</p>
           <div className="mt-4 h-0.5 w-16 bg-white"></div>
         </div>
       </div>
@@ -62,23 +81,19 @@ export default function MorePage() {
               <Sidebar
                 links={sidebarLinks}
                 activeSection={getActiveSection()}
-                basePath="/more"
+                basePath="/naac-cycle"
               />
             </aside>
 
             {/* Main Content Area */}
             <main className="flex-1 min-h-[calc(100vh-400px)] bg-white rounded-lg shadow-sm p-4 md:p-6">
               <Routes>
-                <Route path="student-affairs" element={<StudentAffairsIndex />} />
-                <Route path="research-and-development" element={<div>R&D Content</div>} />
-                <Route path="calendar" element={<Calendar />} />
-                <Route path="feedback" element={<Feedback />} />
-                <Route path="gallery" element={<Gallery />} />
-                <Route path="grievances" element={<Grievances />} />
-                <Route path="iqac" element={<IQAC />} />
-                <Route path="rti" element={<RTI />} />
-                <Route index element={<Navigate to="student-affairs" replace />} />
-                <Route path="*" element={<Navigate to="student-affairs" replace />} />
+                <Route path="naac-cycle-1" element={<NaacCycle1 data={naacCycle1Data} />} />
+                {/* <Route path="naac-cycle-2" element={<NaacCycle2 />} /> */}
+                {/* <Route path="naac-cycle-3" element={<NaacCycle3 />} /> */}
+                <Route path="AQAR" element={<AQAR />} />
+                <Route index element={<Navigate to="naac-cycle-1" replace />} />
+                <Route path="*" element={<Navigate to="naac-cycle-1" replace />} />
               </Routes>
             </main>
           </div>
@@ -86,4 +101,4 @@ export default function MorePage() {
       </div>
     </div>
   );
-} 
+}

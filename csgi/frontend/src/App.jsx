@@ -16,6 +16,8 @@ import MorePage from './pages/More/MoreIndex';
 import Cse from './pages/Campus/Initiatives/NPTEL';
 import FacilitiesIndex from './pages/Campus/Facilities/Facilitiesindex';
 import InitiativesIndex from './pages/Campus/Initiatives/InitiativesIndex';
+import AlumniPage from './pages/Alumni/AlumniIndex';
+import NAACPage from './pages/NAAC Cycle/NAACIndex';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -82,6 +84,12 @@ function App() {
             {/* More page and its nested routes */}
             <Route path="/more/*" element={<MorePage />} />
             
+            {/* Alumni page and its nested routes */}
+            <Route path="/alumni/*" element={<AlumniPage />} />
+            
+            {/* NAAC Cycle page and its nested routes */}
+            <Route path="/naac-cycle/*" element={<NAACPage />} />
+            
             {/* Gallery routes */}
             <Route path="/gallery/*" element={<MorePage />} />
             <Route path="/gallery/upload" element={<GalleryForm />} />
@@ -131,6 +139,19 @@ function App() {
             <Route path="/grievances" element={<Navigate to="/more/grievances" replace />} />
             <Route path="/iqac" element={<Navigate to="/more/iqac" replace />} />
             <Route path="/rti" element={<Navigate to="/more/rti" replace />} />
+            
+            {/* Redirects for Alumni section */}
+            <Route path="/about-association" element={<Navigate to="/alumni/about-association" replace />} />
+            <Route path="/activities" element={<Navigate to="/alumni/activities" replace />} />
+            <Route path="/presence" element={<Navigate to="/alumni/presence" replace />} />
+            <Route path="/team-members" element={<Navigate to="/alumni/team-members" replace />} />
+            <Route path="/registered-association" element={<Navigate to="/alumni/registered-association" replace />} />
+            
+            {/* Redirects for NAAC Cycle section */}
+            <Route path="/naac-cycle-1" element={<Navigate to="/naac-cycle/naac-cycle-1" replace />} />
+            <Route path="/naac-cycle-2" element={<Navigate to="/naac-cycle/naac-cycle-2" replace />} />
+            <Route path="/naac-cycle-3" element={<Navigate to="/naac-cycle/naac-cycle-3" replace />} />
+            <Route path="/aqar" element={<Navigate to="/naac-cycle/aqar" replace />} />
             
             {/* Catch all route - redirect to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
