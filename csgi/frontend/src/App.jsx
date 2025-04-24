@@ -3,6 +3,7 @@ import React from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import AboutPage from './pages/About/AboutIndex';
+import AcademicPage from './pages/Academics/AcaedmicIndex';
 import AdmissionPage from './pages/Admission/AdmissionIndex';
 import PlacementPage from './pages/Placement/PlacementIndex';
 import Home from './pages/Home';
@@ -12,6 +13,9 @@ import GalleryForm from './pages/Admin/GalleryForm';
 import GalleryDashboard from './pages/Admin/GalleryDashboard';
 import Gallery from './pages/More/Gallery';
 import MorePage from './pages/More/MoreIndex';
+import Cse from './pages/Campus/Initiatives/NPTEL';
+import FacilitiesIndex from './pages/Campus/Facilities/Facilitiesindex';
+import InitiativesIndex from './pages/Campus/Initiatives/InitiativesIndex';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -30,6 +34,7 @@ function App() {
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Home />} />
+            <Route path="/cse" element={<Cse />} />
             
             {/* About page and its nested routes */}
             <Route path="/about/*" element={<AboutPage />} />
@@ -37,8 +42,15 @@ function App() {
             {/* Admission page and its nested routes */}
             <Route path="/admission/*" element={<AdmissionPage />} />
             
+            {/* Academics page and its nested routes */}
+            <Route path="/academics/*" element={<AcademicPage />} />
+            
             {/* Placement page and its nested routes */}
             <Route path="/placement/*" element={<PlacementPage />} />
+            
+            {/* Campus routes */}
+            <Route path="/campus/facilities" element={<FacilitiesIndex />} />
+            <Route path="/campus/initiatives" element={<InitiativesIndex />} />
             
             {/* Admin Routes */}
             <Route path="/admin-login" element={<AdminLogin />} />
@@ -67,6 +79,14 @@ function App() {
               }
             />
             
+            {/* More page and its nested routes */}
+            <Route path="/more/*" element={<MorePage />} />
+            
+            {/* Gallery routes */}
+            <Route path="/gallery/*" element={<MorePage />} />
+            <Route path="/gallery/upload" element={<GalleryForm />} />
+            <Route path="/gallery/manage" element={<GalleryDashboard />} />
+            
             {/* Redirects for About section */}
             <Route path="/introduction" element={<Navigate to="/about/introduction" replace />} />
             <Route path="/society" element={<Navigate to="/about/society" replace />} />
@@ -84,6 +104,15 @@ function App() {
             <Route path="/leaflet" element={<Navigate to="/admission/leaflet" replace />} />
             <Route path="/help-desk" element={<Navigate to="/admission/help-desk" replace />} />
             
+            {/* Redirects for Academics section */}
+            <Route path="/computer-science-and-engineering" element={<Navigate to="/academics/computer-science-and-engineering" replace />} />
+            <Route path="/artificial-intelligence-and-data-engineering" element={<Navigate to="/academics/artificial-intelligence-and-data-engineering" replace />} />
+            <Route path="/civil-engineering" element={<Navigate to="/academics/civil-engineering" replace />} />
+            <Route path="/electrical-and-electronics-engineering" element={<Navigate to="/academics/electrical-and-electronics-engineering" replace />} />
+            <Route path="/mechatronics" element={<Navigate to="/academics/mechatronics" replace />} />
+            <Route path="/mechanical-engineering" element={<Navigate to="/academics/mechanical-engineering" replace />} />
+            <Route path="/information-technology-engineering" element={<Navigate to="/academics/information-technology-engineering" replace />} />
+            
             {/* Redirects for Placement section */}
             <Route path="/about-tnp-cell" element={<Navigate to="/placement/about-tnp-cell" replace />} />
             <Route path="/internship" element={<Navigate to="/placement/internship" replace />} />
@@ -93,14 +122,6 @@ function App() {
             <Route path="/team-members" element={<Navigate to="/placement/team-members" replace />} />
             <Route path="/placement-statistics" element={<Navigate to="/placement/placement-statistics" replace />} />
             <Route path="/training-programme" element={<Navigate to="/placement/training-programme" replace />} />
-            
-            {/* Gallery routes - update to use the More section Gallery component */}
-            <Route path="/gallery/*" element={<MorePage />} />
-            <Route path="/gallery/upload" element={<GalleryForm />} />
-            <Route path="/gallery/manage" element={<GalleryDashboard />} />
-            
-            {/* More page and its nested routes */}
-            <Route path="/more/*" element={<MorePage />} />
             
             {/* Redirects for More section */}
             <Route path="/student-affairs" element={<Navigate to="/more/student-affairs" replace />} />
