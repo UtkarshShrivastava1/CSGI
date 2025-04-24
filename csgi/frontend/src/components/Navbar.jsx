@@ -25,19 +25,28 @@ export default function Navbar() {
     }
   };
 
+  // Data-driven approach for menu items
   const navItems = [
     { name: 'Home', dropdown: [] },
     {
       name: 'About',
-      dropdown: ['Introduction', 'Society', 'Aspiration', 'Achievement',  'Professional Bodies','Message', 'Governing Body','Celebration'],
+      dropdown: ['Introduction', 'Society', 'Aspiration', 'Achievement', 'Professional Bodies', 'Message', 'Governing Body', 'Celebration'],
     },
     {
       name: 'Academics',
-      dropdown: ['Computer Science and Engineering', 'Electrical and Electronics Engineering', 'Mechanical Engineering', 'Information Technology Engineering', 'Civil Engineering', ' Artificial Intelligence & Data Science Engineering', 'Mechatronics'],
+      dropdown: [
+        'Computer Science and Engineering', 
+        'Electrical and Electronics Engineering', 
+        'Mechanical Engineering', 
+        'Information Technology Engineering', 
+        'Civil Engineering', 
+        'Artificial Intelligence & Data Science Engineering', 
+        'Mechatronics'
+      ],
     },
     {
       name: 'Admission',
-      dropdown: ['Courses Offered', 'Admission Process', 'Help desk ',' Leaflet'],
+      dropdown: ['Courses Offered', 'Admission Process', 'Help Desk', 'Leaflet'],
     },
     {
       name: 'Campus',
@@ -46,29 +55,36 @@ export default function Navbar() {
     { name: 'Connect', dropdown: [] },
     {
       name: 'Placement',
-      dropdown: ['About TNP Cell', 'Internship', 'MOUs', 'Our Recruiters', 'Placement Policies', 'Team Members', 'Placement Statistics', 'Training Programme'],
+      dropdown: [
+        'About TNP Cell', 
+        'Internship', 
+        'MOUs', 
+        'Our Recruiters', 
+        'Placement Policies', 
+        'Team Members', 
+        'Placement Statistics', 
+        'Training Programme'
+      ],
     },
     {
       name: 'Alumni',
       dropdown: ['About Association', 'Activities', 'Presence', 'Registered Association', 'Team Members'],
     },
     {
-      name:'NAAC Cycle',
-      dropdown:['NAAC Cycle 1','NAAC Cycle 2','NAAC Cycle 3'],
+      name: 'NAAC Cycle',
+      dropdown: ['NAAC Cycle 1', 'NAAC Cycle 2', 'NAAC Cycle 3'],
     },
     {
       name: 'More',
       dropdown: [
-        // {
-        //   name: 'Student Affairs',
-        //   submenu: ['Counselling', 'Development Programs', 'Extra Co-curricular Activities', 'Industry Interactions', 'Students Clubs', 'The Student Association'],
-        // },
-        // {
-        //   name: 'R&D',
-        //   submenu: ['About Association', 'Activities', 'Presence', 'Registered Association', 'Team Members'],
-        // },
-        'Student Affairs',
-        'R&D',
+        {
+          name: 'Student Affairs',
+          submenu: ['Counselling', 'Development Programs', 'Extra Co-curricular Activities', 'Industry Interactions', 'Students Clubs', 'The Student Association'],
+        },
+        {
+          name: 'R&D',
+          submenu: ['Research Centers', 'Publications', 'Projects', 'Patents', 'Collaborations'],
+        },
         'Calendar',
         'Feedback',
         'Gallery',
@@ -78,6 +94,12 @@ export default function Navbar() {
       ],
     },
   ];
+
+  // Helper function to generate URL paths
+  const getUrlPath = (itemName) => {
+    const name = itemName.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
+    return name === 'home' ? '/' : `/${name}`;
+  };
 
   return (
     <nav className="bg-[#0d173b] text-white">
@@ -89,7 +111,7 @@ export default function Navbar() {
               <div key={index} className="group relative">
                 {item.dropdown.length === 0 ? (
                   <Link
-                    to={`/${item.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and') === 'home' ? '' : item.name.toLowerCase()}`}
+                    to={getUrlPath(item.name)}
                     className="flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-[#1a2d5e] focus:outline-none cursor-pointer"
                   >
                     {item.name}
@@ -111,7 +133,7 @@ export default function Navbar() {
                           <div key={subIndex}>
                             {typeof subItem === 'string' ? (
                               <Link
-                                to={`/${subItem.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+                                to={`/${item.name.toLowerCase()}/${subItem.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
                                 className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                               >
                                 {subItem}
@@ -129,7 +151,7 @@ export default function Navbar() {
                                       {subItem.submenu.map((subSubItem, subSubIndex) => (
                                         <Link
                                           key={subSubIndex}
-                                          to={`/${subSubItem.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+                                          to={`/${item.name.toLowerCase()}/${subItem.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}/${subSubItem.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
                                           className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                                         >
                                           {subSubItem}
@@ -170,7 +192,7 @@ export default function Navbar() {
               <div key={index}>
                 {item.dropdown.length === 0 ? (
                   <Link
-                    to={`/${item.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and') === 'home' ? '' : item.name.toLowerCase()}`}
+                    to={getUrlPath(item.name)}
                     className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -192,7 +214,7 @@ export default function Navbar() {
                           <div key={subIndex}>
                             {typeof subItem === 'string' ? (
                               <Link
-                                to={`/${subItem.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+                                to={`/${item.name.toLowerCase()}/${subItem.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
                                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                                 onClick={() => setMobileMenuOpen(false)}
                               >
@@ -212,7 +234,7 @@ export default function Navbar() {
                                     {subItem.submenu.map((subSubItem, subSubIndex) => (
                                       <Link
                                         key={subSubIndex}
-                                        to={`/${subSubItem.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+                                        to={`/${item.name.toLowerCase()}/${subItem.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}/${subSubItem.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
                                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#1a2d5e] hover:text-white"
                                         onClick={() => setMobileMenuOpen(false)}
                                       >

@@ -25,7 +25,7 @@ export default function MessageIndex() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white rounded-xl shadow-2xl">
+    <div className="flex flex-col min-h-screen bg-white rounded-xl ">
       {/* Header with gradient background */}
       <div className="bg-gradient-to-r from-[#0d173b] to-[#1e305f] py-8 rounded-t-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -40,7 +40,7 @@ export default function MessageIndex() {
       {/* Main content with white background */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full bg-white">
         {/* Message card */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8 transition-all duration-300 hover:shadow-lg">
+        <div className="bg-white rounded-lg overflow-hidden mb-8 transition-all duration-300">
           {/* Mobile tab selector */}
           <div className="block md:hidden border-b border-gray-100">
             <button

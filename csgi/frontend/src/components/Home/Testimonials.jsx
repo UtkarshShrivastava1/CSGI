@@ -74,78 +74,78 @@ const Testimonials = () => {
             Discover what our students say about their transformative journey at our institution
           </p>
         </div>
-
+        
         {/* Testimonial Carousel */}
         <div>
-          <Swiper
-            effect="coverflow"
-            grabCursor={true}
-            centeredSlides={true}
+        <Swiper
+          effect="coverflow"
+          grabCursor={true}
+          centeredSlides={true}
             slidesPerView="auto"
             loop={true}
-            coverflowEffect={{
+          coverflowEffect={{
               rotate: 20,
-              stretch: 0,
+            stretch: 0,
               depth: 200,
               modifier: 1,
               slideShadows: true,
-            }}
-            autoplay={{
+          }}
+          autoplay={{
               delay: 4000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
             modules={[EffectCoverflow, Autoplay, Pagination]}
             className="mySwiper"
-          >
+        >
             {testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id} style={{ width: '70%', maxWidth: '800px' }}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
-                  <div className="flex flex-col md:flex-row">
+                <div className="flex flex-col md:flex-row">
                     {/* Left column with image and info */}
                     <div className="md:w-2/5 bg-gradient-to-br from-[#0d173b] to-blue-900 p-6 relative flex flex-col items-center justify-center text-center">
                       <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-white border-opacity-20 shadow-lg mb-4">
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
                       <h3 className="text-white text-lg font-bold mb-1">{testimonial.name}</h3>
                       <div className="flex items-center justify-center gap-2 text-blue-200 mb-2">
                         <GraduationCap size={14} className="opacity-70" />
                         <p className="text-sm">{testimonial.program}</p>
-                      </div>
-                      
-                      <div className="mt-2 mb-4">
-                        <StarRating rating={testimonial.rating} />
-                      </div>
                     </div>
                     
-                    {/* Right column with testimonial content */}
+                      <div className="mt-2 mb-4">
+                      <StarRating rating={testimonial.rating} />
+                    </div>
+                  </div>
+                  
+                  {/* Right column with testimonial content */}
                     <div className="md:w-3/5 p-6 flex flex-col justify-center">
                       <div className="mb-4">
                         <Quote size={32} className="text-[#0d173b] opacity-20" />
-                      </div>
-                      
-                      <p className="text-xl font-medium mb-4 text-[#0d173b] leading-relaxed">
-                        "{testimonial.quote}"
-                      </p>
-                      
-                      <p className="text-base text-slate-600 mb-6 leading-relaxed">
-                        {testimonial.description}
-                      </p>
-                      
-                      <div className="h-1 w-16 bg-[#0d173b] rounded-full opacity-30"></div>
                     </div>
+                    
+                      <p className="text-xl font-medium mb-4 text-[#0d173b] leading-relaxed">
+                      "{testimonial.quote}"
+                    </p>
+                    
+                      <p className="text-base text-slate-600 mb-6 leading-relaxed">
+                      {testimonial.description}
+                    </p>
+                    
+                      <div className="h-1 w-16 bg-[#0d173b] rounded-full opacity-30"></div>
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
         </div>
       </div>
     </div>
