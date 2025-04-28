@@ -194,7 +194,7 @@ export default function Navbar() {
                 <div className="rounded-md shadow-lg bg-white">
                   <div className="py-1">
                     <Link to="/more/student-affairs" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Student Affairs</Link>
-                    <Link to="/more/r-and-d" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">R&D</Link>
+                    <Link to="/more/research-and-development" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">R&D</Link>
                     <Link to="/more/calendar" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Calendar</Link>
                     <Link to="/more/feedback" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Feedback</Link>
                     <Link to="/more/gallery" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Gallery</Link>

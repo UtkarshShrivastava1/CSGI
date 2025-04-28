@@ -3,34 +3,28 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';
 import Sidebar from '../../components/Sidebar';
-import Gallery from './Gallery';
-import Grievances from './Grievances';
-import RTI from './RTI';
-import Feedback from './Feedback';
-import IQAC from './IQAC';
-import Calendar from './Calendar';
-import StudentAffairsIndex from './Student affairs/StudentAffairsIndex';
-import RnD from './RnD';
+import PatentsPage from './Patents';
+import ConferencePage from './ConferenceWorkshop';
+import PublicationsPage from './Publications';
+import ProjectsPage from './Projects';
+import FundsGrantsPage from './FundsAndGrants';
 
 const sidebarLinks = [
-  { name: 'Student Affairs', path: 'student-affairs' },
-  { name: 'R&D', path: 'research-and-development' },
-  { name: 'Calendar', path: 'calendar' },
-  { name: 'Feedback', path: 'feedback' },
-  { name: 'Gallery', path: 'gallery' },
-  { name: 'Grievances', path: 'grievances' },
-  { name: 'IQAC', path: 'iqac' },
-  { name: 'RTI', path: 'rti' },
+  { name: 'Patents', path: 'patents' },
+  { name: 'ConferenceWorkshop', path: 'conference-workshop' },
+  { name: 'Publications', path: 'publications' },
+  { name: 'Projects', path: 'projects' },
+  { name: 'FundsGrants', path: 'funds-grants' },
 ];
 
-export default function MorePage() {
+export default function FundsPage() {
   const location = useLocation();
   
   // Determine active section based on current path
   const getActiveSection = () => {
     const path = location.pathname.split('/').pop();
     const activeLink = sidebarLinks.find(link => link.path === path);
-    return activeLink ? activeLink.name : 'Student Affairs';
+    return activeLink ? activeLink.name : 'Patents';
   };
 
   return (
@@ -46,14 +40,12 @@ export default function MorePage() {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-[#0d173b] to-[#1e305f] text-white w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h1 className="text-3xl md:text-4xl font-bold">More</h1>
-          <p className="mt-3 text-base md:text-lg font-light">
-            Explore additional resources and information about CSIT
-          </p>
+          <h1 className="text-3xl md:text-4xl font-bold">Funds</h1>
+          <p className="mt-3 text-base md:text-lg font-light">Shaping the future through excellence in technical education since 1999</p>
           <div className="mt-4 h-0.5 w-16 bg-white"></div>
         </div>
       </div>
-      
+       
       {/* Content Section */}
       <div className="w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,23 +55,20 @@ export default function MorePage() {
               <Sidebar
                 links={sidebarLinks}
                 activeSection={getActiveSection()}
-                basePath="/more"
+                basePath="/funds"
               />
             </aside>
 
             {/* Main Content Area */}
             <main className="flex-1 min-h-[calc(100vh-400px)] bg-white rounded-lg shadow-sm p-4 md:p-6">
               <Routes>
-                <Route path="student-affairs" element={<StudentAffairsIndex />} />
-                <Route path="research-and-development" element={<RnD/>} />
-                <Route path="calendar" element={<Calendar />} />
-                <Route path="feedback" element={<Feedback />} />
-                <Route path="gallery" element={<Gallery />} />
-                <Route path="grievances" element={<Grievances />} />
-                <Route path="iqac" element={<IQAC />} />
-                <Route path="rti" element={<RTI />} />
-                <Route index element={<Navigate to="student-affairs" replace />} />
-                <Route path="*" element={<Navigate to="student-affairs" replace />} />
+                <Route path="patents" element={<PatentsPage />} />
+                <Route path="conference-workshop" element={<ConferencePage />} />
+                <Route path="publications" element={<PublicationsPage />} />
+                <Route path="projects" element={<ProjectsPage />} />
+                <Route path="funds-grants" element={<FundsGrantsPage />} />
+                <Route index element={<Navigate to="patents" replace />} />
+                <Route path="*" element={<Navigate to="patents" replace />} />
               </Routes>
             </main>
           </div>
@@ -87,4 +76,4 @@ export default function MorePage() {
       </div>
     </div>
   );
-} 
+}
