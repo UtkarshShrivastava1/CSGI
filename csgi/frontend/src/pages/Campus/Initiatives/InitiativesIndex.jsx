@@ -1,23 +1,30 @@
-import { useState } from "react";
 import {
-  Users,
-  Heart,
   BookOpen,
+  Heart,
   Target,
-  Menu,
-  X
+  Users
 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-import NSS from './NSS';
-import SWAR from './SWAR';
-import Startups from './Startups';
-import OtherClubs from './OtherClubs';
 import Header from '../../../components/Header';
 import Navbar from '../../../components/Navbar';
+import NSS from './NSS';
+import OtherClubs from './OtherClubs';
+import SWAR from './SWAR';
+import Startups from './Startups';
+
+const tabMapping = {
+  nss: "NSS",
+  swar: "SWAR",
+  startups: "Startups",
+  clubs: "OtherClubs"
+};
 
 export default function ModernDepartmentPage() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("NSS");
-  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   // Content data for tabs
   const tabContent = {
@@ -41,6 +48,23 @@ export default function ModernDepartmentPage() {
       icon: <BookOpen className="text-rose-500" />,
       content: <OtherClubs />,
     },
+  };
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const tabParam = searchParams.get('tab');
+    if (tabParam && tabMapping[tabParam]) {
+      setActiveTab(tabMapping[tabParam]);
+    }
+  }, [location.search]);
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    // Find the URL parameter key for this tab
+    const paramKey = Object.entries(tabMapping).find(([, value]) => value === tab)?.[0];
+    if (paramKey) {
+      navigate(`?tab=${paramKey}`, { replace: true });
+    }
   };
 
   return (
@@ -78,7 +102,7 @@ export default function ModernDepartmentPage() {
                   {Object.keys(tabContent).map((tab) => (
                     <button
                       key={tab}
-                      onClick={() => setActiveTab(tab)}
+                      onClick={() => handleTabChange(tab)}
                       className={`w-full px-4 py-3 text-left transition-colors duration-200 rounded-md mb-1
                       ${
                         activeTab === tab

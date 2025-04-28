@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import ExternalRedirect from './components/ExternalRedirect';
 import Footer from './components/Footer';
 import AboutPage from './pages/About/AboutIndex';
 import AcademicPage from './pages/Academics/AcademicIndex';
@@ -9,11 +10,14 @@ import GalleryDashboard from './pages/Admin/GalleryDashboard';
 import GalleryForm from './pages/Admin/GalleryForm';
 import AdmissionPage from './pages/Admission/AdmissionIndex';
 import AlumniPage from './pages/Alumni/AlumniIndex';
+import FacilitiesIndex from './pages/Campus/Facilities/Facilitiesindex';
+import InitiativesIndex from './pages/Campus/Initiatives/InitiativesIndex';
+import FundsPage from './pages/Funds/FundsIndex';
 import Home from './pages/Home';
 import MorePage from './pages/More/MoreIndex';
-import PlacementPage from './pages/Placement/PlacementIndex';
 import NaacPage from './pages/NAAC Cycle/NAACIndex';
-import FundsPage from './pages/Funds/FundsIndex';
+import PlacementPage from './pages/Placement/PlacementIndex';
+
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('adminToken');
@@ -31,6 +35,10 @@ function App() {
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Home />} />
+            
+            {/* External Redirect Routes */}
+            <Route path="/external/:type" element={<ExternalRedirect />} />
+            <Route path="/external/:type/:param" element={<ExternalRedirect />} />
             
             {/* About page and its nested routes */}
             <Route path="/about/*" element={<AboutPage />} />
@@ -52,6 +60,10 @@ function App() {
             
             {/* Funds page and its nested routes */}
             <Route path="/funds/*" element={<FundsPage />} />
+
+            {/* Campus routes */}
+            <Route path="/campus/facilities" element={<FacilitiesIndex />} />
+            <Route path="/campus/initiatives" element={<InitiativesIndex />} />
             
             {/* Admin Routes */}
             <Route path="/admin-login" element={<AdminLogin />} />

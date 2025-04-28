@@ -1,13 +1,25 @@
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import Counselling from "./Counselling";
 import DevelopmentPrograms from "./DevelopmentPrograms";
+import ExtraCurricularActivities from "./ExtraCurricularActivities";
 import IndustryInteractions from "./IndustryInteractions";
 import StudentsAssociation from "./StudentsAssociation";
 import StudentsClubs from "./StudentsClubs";
-import ExtraCurricularActivities from "./ExtraCurricularActivities";
-import Counselling from "./Counselling";
+
+const tabMapping = {
+  associations: "studentsassociation",
+  industry: "industryinteractions",
+  clubs: "studentsclubs",
+  development: "developmentprograms",
+  activities: "extracurricularactivities",
+  counselling: "counselling"
+};
 
 export default function StudentAffairsIndex() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("developmentprograms");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -37,6 +49,23 @@ export default function StudentAffairsIndex() {
       title: "Counselling",
       content: <Counselling />,
     },
+  };
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const tabParam = searchParams.get('tab');
+    if (tabParam && tabMapping[tabParam]) {
+      setActiveTab(tabMapping[tabParam]);
+    }
+  }, [location.search]);
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    // Find the URL parameter key for this tab
+    const paramKey = Object.entries(tabMapping).find(([, value]) => value === tab)?.[0];
+    if (paramKey) {
+      navigate(`?tab=${paramKey}`, { replace: true });
+    }
   };
 
   return (
@@ -78,7 +107,7 @@ export default function StudentAffairsIndex() {
                   <button
                     key={tab}
                     onClick={() => {
-                      setActiveTab(tab);
+                      handleTabChange(tab);
                       setMobileMenuOpen(false);
                     }}
                     className={`flex items-center w-full p-3 text-left ${
@@ -99,7 +128,7 @@ export default function StudentAffairsIndex() {
             {Object.keys(tabContent).map((tab) => (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => handleTabChange(tab)}
                 className={`flex items-center justify-center py-4 px-6 transition-all duration-300 flex-1 ${
                   activeTab === tab
                     ? "border-b-2 border-[#0d173b] text-[#0d173b] bg-[#b2b9d29e] font-medium"

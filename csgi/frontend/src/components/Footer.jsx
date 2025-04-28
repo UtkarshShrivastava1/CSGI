@@ -25,35 +25,35 @@ const SchoolFooter = () => {
           </div>
           
           <div className="flex space-x-4">
-            <Link href="https://www.instagram.com/csgidurg/"
+            <Link to="/external/instagram"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="Instagram"
                target="_blank"
                rel="noopener noreferrer">
               <FaInstagram className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
             </Link>
-            <Link href="https://www.facebook.com/csgidurg.in"
+            <Link to="/external/facebook"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="Facebook"
                target="_blank"
                rel="noopener noreferrer">
               <FaFacebookF className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
             </Link>
-            <Link href="https://www.youtube.com/channel/UCp_whb0YhFgOSYofgSVQjuA/videos"
+            <Link to="/external/youtube"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="YouTube"
                target="_blank"
                rel="noopener noreferrer">
               <FaYoutube className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
             </Link>
-            <Link href="https://www.linkedin.com/in/chhatrapati-shivaji-group-of-institutions-durg-9909173b/"
+            <Link to="/external/linkedin"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="LinkedIn"
                target="_blank"
                rel="noopener noreferrer">
               <FaLinkedinIn className="h-5 w-5 text-white" style={{ fontSize: '1.25rem' }} />
             </Link>
-            <Link href="https://x.com/DurgCsit"
+            <Link to="/external/twitter"
                className="bg-blue bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition duration-300"
                aria-label="Twitter"
                target="_blank"
@@ -71,11 +71,11 @@ const SchoolFooter = () => {
               <span className="border-b-2 border-blue-400 pb-1">About</span>
             </h3>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">About CSIT</Link></li>
-              <li><Link href="/more/student-affairs" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Students Associations</Link></li>
-              <li><Link href="/more/student-affairs" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Industrial Visit</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">SWAR</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">News Letter</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">About CSIT</Link></li>
+              <li><Link to="/more/student-affairs?tab=associations" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Students Associations</Link></li>
+              <li><Link to="/more/student-affairs?tab=industry" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Industrial Visit</Link></li>
+              <li><Link to="/campus/initiatives?tab=swar" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">SWAR</Link></li>
+              <li><Link to="/more/newsletter" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">News Letter</Link></li>
             </ul>
           </div>
           
@@ -85,11 +85,11 @@ const SchoolFooter = () => {
               <span className="border-b-2 border-blue-400 pb-1">Academics</span>
             </h3>
             <ul className="space-y-2">
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Academic Calendar</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Courses Offered</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Admission Processes</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NPTEL</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NIRF 2024</Link></li>
+              <li><Link to="/more/calendar" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Academic Calendar</Link></li>
+              <li><Link to="/admission/courses-offered" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Courses Offered</Link></li>
+              <li><Link to="/admission/admission-process" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Admission Processes</Link></li>
+              <li><Link to="/academics/nptel" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NPTEL</Link></li>
+              <li><Link to="/academics/nirf" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NIRF 2024</Link></li>
             </ul>
           </div>
           
@@ -99,10 +99,10 @@ const SchoolFooter = () => {
               <span className="border-b-2 border-blue-400 pb-1">Mandatory Information</span>
             </h3>
             <ul className="space-y-2">
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Anti-Ragging</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Mandatory Disclosure</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">RTI</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NSS</Link></li>
+              <li><Link to="/more/anti-ragging" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Anti-Ragging</Link></li>
+              <li><Link to="/more/mandatory-disclosure" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">Mandatory Disclosure</Link></li>
+              <li><Link to="/more/rti" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">RTI</Link></li>
+              <li><Link to="/campus/initiatives?tab=nss" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">NSS</Link></li>
               <li><Link to="/funds" className="text-gray-300 hover:text-blue-300 transition duration-300 inline-block py-1">FUNDS & GRANTS</Link></li>
             </ul>
           </div>
@@ -118,37 +118,37 @@ const SchoolFooter = () => {
                   <HiLocationMarker className="h-5 w-5 text-blue-300" style={{ fontSize: '1.25rem' }} />
                 </div>
                 <Link 
-        href="https://www.google.com/maps/place/CSIT+Durg/@21.1482141,81.2611754,722m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a293bf98e611daf:0x9aeb86912d1db8e7!8m2!3d21.1482141!4d81.2611754!16s%2Fm%2F076xq1f?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="text-gray-300 text-sm hover:text-blue-300 transition duration-300"
-      >
-        Shivaji Nagar, Balod Road Durg, Chhattisgarh 491001
-      </Link>
+                  to="/external/maps"
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-300 text-sm hover:text-blue-300 transition duration-300"
+                >
+                  Shivaji Nagar, Balod Road Durg, Chhattisgarh 491001
+                </Link>
               </li>
               <li className="flex items-center">
                 <div className="bg-blue-900 p-2 rounded-md mr-3 flex-shrink-0">
                   <HiMail className="h-5 w-5 text-blue-300" style={{ fontSize: '1.25rem' }} />
                 </div>
-                <Link href="mailto:registrar@csitdurg.in" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">registrar@csitdurg.in</Link>
+                <Link to="/external/email/registrar" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">registrar@csitdurg.in</Link>
               </li>
               <li className="flex items-center">
                 <div className="bg-blue-900 p-2 rounded-md mr-3 flex-shrink-0">
                   <HiMail className="h-5 w-5 text-blue-300" style={{ fontSize: '1.25rem' }} />
                 </div>
-                <Link href="mailto:info@csitdurg.in" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">info@csitdurg.in</Link>
+                <Link to="/external/email/info" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">info@csitdurg.in</Link>
               </li>
               <li className="flex items-center">
                 <div className="bg-blue-900 p-2 rounded-md mr-3 flex-shrink-0">
                   <HiPhone className="h-5 w-5 text-blue-300" style={{ fontSize: '1.25rem' }} />
                 </div>
-                <Link href="tel:+918966000059" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">+91 89660 00059</Link>
+                <Link to="/external/phone/8966000059" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">+91 89660 00059</Link>
               </li>
               <li className="flex items-center">
                 <div className="bg-blue-900 p-2 rounded-md mr-3 flex-shrink-0">
                   <HiPhone className="h-5 w-5 text-blue-300" style={{ fontSize: '1.25rem' }} />
                 </div>
-                <Link href="tel:+918966000102" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">+91 89660 00102</Link>
+                <Link to="/external/phone/8966000102" className="text-gray-300 text-sm hover:text-blue-300 transition duration-300">+91 89660 00102</Link>
               </li>
             </ul>
           </div>
@@ -162,18 +162,18 @@ const SchoolFooter = () => {
             Copyright © 2025 All rights reserved By CSIT
           </div>
           <div className="flex space-x-8">
-            <Link href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Privacy Policy</Link>
-            <Link href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Terms & Conditions</Link>
-            <Link href="#" className="text-gray-400 hover:text-gray-200 transition duration-300">Sitemap</Link>
+            <Link to="/privacy-policy" className="text-gray-400 hover:text-gray-200 transition duration-300">Privacy Policy</Link>
+            <Link to="/terms" className="text-gray-400 hover:text-gray-200 transition duration-300">Terms & Conditions</Link>
+            <Link to="/sitemap" className="text-gray-400 hover:text-gray-200 transition duration-300">Sitemap</Link>
             <Link
-              href="/admin-login"
+              to="/admin-login"
               className="text-gray-400 hover:text-gray-200 transition duration-300"
             >
               Admin
             </Link>
           </div>
           <div className="text-gray-400 mt-2 md:mt-0">
-            Powered by <Link href="https://www.zager.in/" className="text-blue-400 hover:text-blue-300 transition duration-300" target="_blank" rel="noopener noreferrer">Zager Digital Services</Link>
+            Powered by <Link to="/external/zager" className="text-blue-400 hover:text-blue-300 transition duration-300" target="_blank" rel="noopener noreferrer">Zager Digital Services</Link>
           </div>
         </div>
       </div>
