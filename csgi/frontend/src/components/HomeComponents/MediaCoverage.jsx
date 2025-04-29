@@ -80,15 +80,10 @@ const MediaCoverage = () => {
       <div className="container mx-auto px-6 lg:px-12 relative">
         {/* Section Title */}
         <div className="text-center mb-20">
-          <div className="inline-block relative">
-            <span className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-[#0d173b] rounded-full"></span>
-            <h2 className="text-5xl font-bold text-[#0d173b] mb-6 tracking-tight">
-              Media <span className="relative inline-block">
-                Coverage
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#0d173b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-              </span>
-            </h2>
-          </div>
+          <h2 className="text-5xl font-bold text-[#0d173b] mb-4">
+            Media Coverage
+          </h2>
+          <div className="w-24 h-1 bg-[#0d173b] mx-auto rounded-full"></div>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed mt-8">
             Discover our institution's journey through media highlights and achievements
           </p>
