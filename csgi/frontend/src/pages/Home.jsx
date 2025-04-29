@@ -2,15 +2,15 @@ import React from "react";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Hero from "../components/home/Hero";
-import NewsTicker from "../components/home/NewsTicker";
-import AboutSection from "../components/home/AboutSection";
-import GallerySection from "../components/home/GallerySection";
-import MediaCoverage from "../components/home/MediaCoverage";
-import VideoGallery from "../components/home/VideoGallery";
-import CompaniesVisited from "../components/Home/CompaniesVisited";
-import PlacementStats from "../components/Home/PlacementStats";
-import Testimonials from "../components/Home/Testimonials";
+import Hero from "../components/HomeComponents/Hero";
+import NewsTicker from "../components/HomeComponents/NewsTicker";
+import AboutSection from "../components/HomeComponents/AboutSection";
+import GallerySection from "../components/HomeComponents/GallerySection";
+import MediaCoverage from "../components/HomeComponents/MediaCoverage";
+import VideoGallery from "../components/HomeComponents/VideoGallery";
+import CompaniesVisited from "../components/HomeComponents/CompaniesVisited";
+import PlacementStats from "../components/HomeComponents/PlacementStats";
+import Testimonials from "../components/HomeComponents/Testimonials";
 
 
 const Home = () => {

@@ -26,43 +26,39 @@ const Header = () => {
   return (
     <div className="w-full">
       {/* Top Navbar - Burgundy Background */}
-      <div className="bg-gray-200 text-white py-4 px-8 md:px-8">
-        <div className="container mx-auto flex justify-between items-center">
-          {/* Logo and Title */}
-          <div className="flex items-center space-x-6">
-            <img src={Logo} alt="CSIT Logo" className="w-40 h-full rounded-full" />
-            <div className="hidden md:block">
-              <h1 className="text-4xl text-black md:text-3xl font-serif">Chhatrapati Shivaji Institute of Technology</h1>
-              <p className="text-sm text-black">Shivaji Nagar, Baload Road Durg, Chhattisgarh 491001</p>
-            </div>
-          </div>
-          
-          {/* Mobile Title - Shown only on smallest screens */}
-          <div className="md:hidden text-center absolute left-1/2 transform -translate-x-1/2">
-            <h1 className="text-xl text-black font-serif">Chhatrapati Shivaji Institute of Technology</h1>
-            <p className="text-xs text-black">Shivaji Nagar, Baload Road Durg, Chhattisgarh 491001</p>
-          </div>
-
-          {/* Right Side Menu */}
-          <div className="flex items-center space-x-4">
-            {/* Quick Access Icons - Desktop */}
-            <div className="hidden md:flex items-center gap-17 space-x-15">
-                {/* Additional Photos */}
-              <div className="flex space-x-3">
-                <img src={Image1} alt="Sample 1" className="h-13 w-13 rounded-md" />
-                <img src={Image2} alt="Sample 2" className="h-13 w-13 rounded-md" />
-                <img src={Image3} alt="Sample 3" className="h-13 w-13 rounded-md" />
-                <img src={Image4} alt="Sample 4" className="h-13 w-13 rounded-md" />
-                <img src={Image5} alt="Sample 5" className="h-13 w-13 rounded-md" />
+      <div className="bg-gray-200 text-white py-4 px-4 md:px-8">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            {/* Logo and Title */}
+            <div className="flex items-center space-x-4 md:space-x-6">
+              <img src={Logo} alt="CSIT Logo" className="w-24 md:w-40 h-auto rounded-full" />
+              <div className="text-left">
+                <h1 className="text-xl md:text-4xl text-black font-serif">Chhatrapati Shivaji Institute of Technology</h1>
+                <p className="text-xs md:text-sm text-black">Shivaji Nagar, Baload Road Durg, Chhattisgarh 491001</p>
               </div>
-              {/* Directory Icon */}
-              <div 
-                className="flex flex-col items-center cursor-pointer"
-                onMouseEnter={() => handleDropdownHover('directory')}
-                onMouseLeave={handleDropdownLeave}
-              >
-                <User className="h-5 w-5 text-black" />
-                <span className="text-xs text-black mt-1">ADMISSION</span>
+            </div>
+
+            {/* Right Side Menu */}
+            <div className="mt-4 md:mt-0 flex items-center space-x-4">
+              {/* Quick Access Icons - Desktop */}
+              <div className="hidden md:flex items-center gap-17 space-x-15">
+                {/* Additional Photos */}
+                <div className="flex space-x-3">
+                  <img src={Image1} alt="Sample 1" className="h-13 w-13 rounded-md" />
+                  <img src={Image2} alt="Sample 2" className="h-13 w-13 rounded-md" />
+                  <img src={Image3} alt="Sample 3" className="h-13 w-13 rounded-md" />
+                  <img src={Image4} alt="Sample 4" className="h-13 w-13 rounded-md" />
+                  <img src={Image5} alt="Sample 5" className="h-13 w-13 rounded-md" />
+                </div>
+                {/* Directory Icon */}
+                <div 
+                  className="flex flex-col items-center cursor-pointer"
+                  onMouseEnter={() => handleDropdownHover('directory')}
+                  onMouseLeave={handleDropdownLeave}
+                >
+                  <User className="h-5 w-5 text-black" />
+                  <span className="text-xs text-black mt-1">ADMISSION</span>
+                </div>
               </div>
             </div>
           </div>
