@@ -1,23 +1,22 @@
-// File: App.jsx
 import React from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import ExternalRedirect from './components/ExternalRedirect';
 import Footer from './components/Footer';
 import AboutPage from './pages/About/AboutIndex';
-import AcademicPage from './pages/Academics/AcaedmicIndex';
-import AdmissionPage from './pages/Admission/AdmissionIndex';
-import PlacementPage from './pages/Placement/PlacementIndex';
-import Home from './pages/Home';
-import AdminLogin from './pages/Admin/AdminLogin';
+import AcademicPage from './pages/Academics/AcademicIndex';
 import AdminDashboard from './pages/Admin/AdminDasboard';
-import GalleryForm from './pages/Admin/GalleryForm';
+import AdminLogin from './pages/Admin/AdminLogin';
 import GalleryDashboard from './pages/Admin/GalleryDashboard';
-import Gallery from './pages/More/Gallery';
-import MorePage from './pages/More/MoreIndex';
-import Cse from './pages/Campus/Initiatives/NPTEL';
+import GalleryForm from './pages/Admin/GalleryForm';
+import AdmissionPage from './pages/Admission/AdmissionIndex';
+import AlumniPage from './pages/Alumni/AlumniIndex';
 import FacilitiesIndex from './pages/Campus/Facilities/Facilitiesindex';
 import InitiativesIndex from './pages/Campus/Initiatives/InitiativesIndex';
-import AlumniPage from './pages/Alumni/AlumniIndex';
-import NAACPage from './pages/NAAC Cycle/NAACIndex';
+import FundsPage from './pages/Funds/FundsIndex';
+import Home from './pages/Home';
+import MorePage from './pages/More/MoreIndex';
+import NaacPage from './pages/NAAC Cycle/NAACIndex';
+import PlacementPage from './pages/Placement/PlacementIndex';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -36,20 +35,32 @@ function App() {
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Home />} />
-            <Route path="/cse" element={<Cse />} />
+            
+            {/* External Redirect Routes */}
+            <Route path="/external/:type" element={<ExternalRedirect />} />
+            <Route path="/external/:type/:param" element={<ExternalRedirect />} />
             
             {/* About page and its nested routes */}
             <Route path="/about/*" element={<AboutPage />} />
             
             {/* Admission page and its nested routes */}
             <Route path="/admission/*" element={<AdmissionPage />} />
+
+            {/* Alumni page and its nested routes */}
+            <Route path="/alumni/*" element={<AlumniPage />} />
             
-            {/* Academics page and its nested routes */}
-            <Route path="/academics/*" element={<AcademicPage />} />
+            {/* Naac page and its nested routes */}
+            <Route path="/naac-cycle/*" element={<NaacPage />} />
             
             {/* Placement page and its nested routes */}
             <Route path="/placement/*" element={<PlacementPage />} />
+
+            {/* Academic page and its nested routes */}
+            <Route path="/academics/*" element={<AcademicPage />} />
             
+            {/* Funds page and its nested routes */}
+            <Route path="/funds/*" element={<FundsPage />} />
+
             {/* Campus routes */}
             <Route path="/campus/facilities" element={<FacilitiesIndex />} />
             <Route path="/campus/initiatives" element={<InitiativesIndex />} />
@@ -81,20 +92,6 @@ function App() {
               }
             />
             
-            {/* More page and its nested routes */}
-            <Route path="/more/*" element={<MorePage />} />
-            
-            {/* Alumni page and its nested routes */}
-            <Route path="/alumni/*" element={<AlumniPage />} />
-            
-            {/* NAAC Cycle page and its nested routes */}
-            <Route path="/naac-cycle/*" element={<NAACPage />} />
-            
-            {/* Gallery routes */}
-            <Route path="/gallery/*" element={<MorePage />} />
-            <Route path="/gallery/upload" element={<GalleryForm />} />
-            <Route path="/gallery/manage" element={<GalleryDashboard />} />
-            
             {/* Redirects for About section */}
             <Route path="/introduction" element={<Navigate to="/about/introduction" replace />} />
             <Route path="/society" element={<Navigate to="/about/society" replace />} />
@@ -105,13 +102,7 @@ function App() {
             <Route path="/governing-body" element={<Navigate to="/about/governing-body" replace />} />
             <Route path="/governing-bodies" element={<Navigate to="/about/governing-body" replace />} />
             <Route path="/celebration" element={<Navigate to="/about/celebration" replace />} />
-            
-            {/* Redirects for Admission section */}
-            <Route path="/courses-offered" element={<Navigate to="/admission/courses-offered" replace />} />
-            <Route path="/admission-process" element={<Navigate to="/admission/admission-process" replace />} />
-            <Route path="/leaflet" element={<Navigate to="/admission/leaflet" replace />} />
-            <Route path="/help-desk" element={<Navigate to="/admission/help-desk" replace />} />
-            
+
             {/* Redirects for Academics section */}
             <Route path="/computer-science-and-engineering" element={<Navigate to="/academics/computer-science-and-engineering" replace />} />
             <Route path="/artificial-intelligence-and-data-engineering" element={<Navigate to="/academics/artificial-intelligence-and-data-engineering" replace />} />
@@ -121,6 +112,32 @@ function App() {
             <Route path="/mechanical-engineering" element={<Navigate to="/academics/mechanical-engineering" replace />} />
             <Route path="/information-technology-engineering" element={<Navigate to="/academics/information-technology-engineering" replace />} />
             
+            {/* Redirects for Admission section */}
+            <Route path="/courses-offered" element={<Navigate to="/admission/courses-offered" replace />} />
+            <Route path="/admission-process" element={<Navigate to="/admission/admission-process" replace />} />
+            <Route path="/leaflet" element={<Navigate to="/admission/leaflet" replace />} />
+            <Route path="/help-desk" element={<Navigate to="/admission/help-desk" replace />} />
+            
+            {/* Redirects for NAAC Cycle section */}
+            <Route path="/naac-cycle-1" element={<Navigate to="/naac-cycle/naac-cycle-1" replace />} />
+              {/* <Route path="/naac-cycle-2" element={<Navigate to="/naac-cycle/naac-cycle-2" replace />} /> */}
+              {/* <Route path="/naac-cycle-3" element={<Navigate to="/naac-cycle/naac-cycle-3" replace />} /> */}
+              <Route path="/AQAR" element={<Navigate to="/naac-cycle/AQAR" replace />} />
+
+            {/* Redirects for Alumni section */}
+            <Route path="/about-association" element={<Navigate to="/alumni/about-association" replace />} />
+            <Route path="/activities" element={<Navigate to="/alumni/activities" replace />} />
+            <Route path="/presence" element={<Navigate to="/alumni/presence" replace />} />
+            <Route path="/team-members" element={<Navigate to="/alumni/team-members" replace />} />
+            <Route path="/registered-association" element={<Navigate to="/alumni/registered-association" replace />} />
+
+            {/* Redirects for Funds section */}
+            <Route path="/patents" element={<Navigate to="/funds/patents" replace />} />
+            <Route path="/conference-workshop" element={<Navigate to="/funds/conference-workshop" replace />} />
+            <Route path="/publications" element={<Navigate to="/funds/publications" replace />} />
+            <Route path="/projects" element={<Navigate to="/funds/projects" replace />} />
+            <Route path="/funds-grants" element={<Navigate to="/funds/funds-grants" replace />} />
+                        
             {/* Redirects for Placement section */}
             <Route path="/about-tnp-cell" element={<Navigate to="/placement/about-tnp-cell" replace />} />
             <Route path="/internship" element={<Navigate to="/placement/internship" replace />} />
@@ -131,6 +148,14 @@ function App() {
             <Route path="/placement-statistics" element={<Navigate to="/placement/placement-statistics" replace />} />
             <Route path="/training-programme" element={<Navigate to="/placement/training-programme" replace />} />
             
+            {/* Gallery routes - update to use the More section Gallery component */}
+            <Route path="/gallery/*" element={<MorePage />} />
+            <Route path="/gallery/upload" element={<GalleryForm />} />
+            <Route path="/gallery/manage" element={<GalleryDashboard />} />
+            
+            {/* More page and its nested routes */}
+            <Route path="/more/*" element={<MorePage />} />
+            
             {/* Redirects for More section */}
             <Route path="/student-affairs" element={<Navigate to="/more/student-affairs" replace />} />
             <Route path="/research-and-development" element={<Navigate to="/more/research-and-development" replace />} />
@@ -139,19 +164,6 @@ function App() {
             <Route path="/grievances" element={<Navigate to="/more/grievances" replace />} />
             <Route path="/iqac" element={<Navigate to="/more/iqac" replace />} />
             <Route path="/rti" element={<Navigate to="/more/rti" replace />} />
-            
-            {/* Redirects for Alumni section */}
-            <Route path="/about-association" element={<Navigate to="/alumni/about-association" replace />} />
-            <Route path="/activities" element={<Navigate to="/alumni/activities" replace />} />
-            <Route path="/presence" element={<Navigate to="/alumni/presence" replace />} />
-            <Route path="/team-members" element={<Navigate to="/alumni/team-members" replace />} />
-            <Route path="/registered-association" element={<Navigate to="/alumni/registered-association" replace />} />
-            
-            {/* Redirects for NAAC Cycle section */}
-            <Route path="/naac-cycle-1" element={<Navigate to="/naac-cycle/naac-cycle-1" replace />} />
-            <Route path="/naac-cycle-2" element={<Navigate to="/naac-cycle/naac-cycle-2" replace />} />
-            <Route path="/naac-cycle-3" element={<Navigate to="/naac-cycle/naac-cycle-3" replace />} />
-            <Route path="/aqar" element={<Navigate to="/naac-cycle/aqar" replace />} />
             
             {/* Catch all route - redirect to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
