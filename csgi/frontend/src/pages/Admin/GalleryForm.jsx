@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import { Upload, Loader2, CheckCircle2, XCircle, Image, X } from "lucide-react";
 import { useDropzone } from "react-dropzone";
 import { useNavigate } from "react-router-dom";
+import api from "../../../services/api";
 
 function GalleryForm() {
   const [formData, setFormData] = useState({
@@ -51,10 +52,11 @@ function GalleryForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setStatus({ type: null, message: "" });
+      setStatus({ type: null, message: "" });
 
     try {
       const token = localStorage.getItem("adminToken");
+      console.log(token)
       if (!token) {
         setStatus({ type: "error", message: "Unauthorized! Please login first." });
         return;
@@ -71,19 +73,28 @@ function GalleryForm() {
         postData.append("images", image);
       });
 
-      const response = await fetch("http://localhost:5000/api/gallery/multiple", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: postData,
-      });
+      // const response = await fetch("http://localhost:5000/api/gallery/multiple", {
+      //   method: "POST",
+      //   headers: {
+      //     Authorization: `Bearer ${token}`,
+      //   },
+      //   body: postData,
+      // });
 
-      const data = await response.json();
+      const response = await api.post("/gallery/multiple", postData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'multipart/form-data', // Optional
+      },
+    });
 
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to upload images");
-      }
+      // const data = await response.json();
+
+      const data = response.data;
+
+      // if (!response.ok) {
+      //   throw new Error(data.message || "Failed to upload images");
+      // }
 
       setStatus({ 
         type: "success", 

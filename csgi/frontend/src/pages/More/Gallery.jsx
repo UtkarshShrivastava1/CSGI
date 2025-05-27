@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Loader2, X, Eye } from 'lucide-react';
+import api from '../../../services/api';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -14,11 +15,13 @@ const Gallery = () => {
 
   const fetchGalleryImages = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/gallery');
-      if (!response.ok) {
-        throw new Error('Failed to fetch gallery images');
-      }
-      const data = await response.json();
+      // const response = await fetch('http://localhost:5000/api/gallery');
+      const response = await api.get("/gallery");
+
+      // if (!response.ok) {
+      //   throw new Error('Failed to fetch gallery images');
+      // }
+      const data = await response.data;
       // Handle different response formats
       let imagesData = [];
       if (Array.isArray(data)) {
@@ -100,7 +103,8 @@ const Gallery = () => {
                 <div className="bg-white rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-md border border-gray-100">
                   <div className="aspect-square w-full">
                     <img
-                      src={image.url || image.image?.url || `http://localhost:5000${image.image?.path}`}
+                      // src={image.url || image.image?.url || `http://localhost:5000${image.image?.path}`}
+                      src={image.url || image.image?.url || `api${image.image?.path}`}
                       alt={image.title || 'Gallery image'}
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -140,7 +144,8 @@ const Gallery = () => {
             </button>
             <div className="p-8">
               <img
-                src={selectedImage.url || selectedImage.image?.url || `http://localhost:5000${selectedImage.image?.path}`}
+                // src={selectedImage.url || selectedImage.image?.url || `http://localhost:5000${selectedImage.image?.path}`}
+                src={selectedImage.url || selectedImage.image?.url || `api${selectedImage.image?.path}`}
                 alt={selectedImage.title || 'Gallery image'}
                 className="w-full h-auto max-h-[80vh] object-contain rounded-xl shadow-lg"
               />

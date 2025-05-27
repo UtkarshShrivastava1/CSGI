@@ -16,6 +16,7 @@ import {
   Upload
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import api from '../../../services/api';
 
 const GalleryDashboard = () => {
   const [images, setImages] = useState([]);
@@ -202,16 +203,24 @@ const GalleryDashboard = () => {
   const confirmDelete = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`http://localhost:5000/api/gallery/${imageToDelete}`, {
-        method: 'DELETE',
-        headers: {
-          Authorization: `Bearer ${token}`,
+      // const response = await fetch(`http://localhost:5000/api/gallery/${imageToDelete}`, {
+      //   method: 'DELETE',
+      //   headers: {
+      //     Authorization: `Bearer ${token}`,
+      //   },
+      // });
+      
+      const response = await api.delete(`/gallery/${imageToDelete}`,{
+        // method:"DELETE",
+        headers:{
+          Authorization: `Bearer ${token}`,   
         },
-      });
+      })
 
-      if (!response.ok) {
-        throw new Error('Failed to delete image');
-      }
+
+      // if (!response.ok) {
+      //   throw new Error('Failed to delete image');
+      // }
 
       // Update the images state by filtering out the deleted image
       setImages(prevImages => prevImages.filter(img => img._id !== imageToDelete));
@@ -252,13 +261,21 @@ const GalleryDashboard = () => {
         formData.append('image', editFormData.image);
       }
 
-      const response = await fetch(`http://localhost:5000/api/gallery/${selectedImage._id}`, {
-        method: 'PUT',
-        headers: {
+      // const response = await fetch(`http://localhost:5000/api/gallery/${selectedImage._id}`, {
+      //   method: 'PUT',
+      //   headers: {
+      //     Authorization: `Bearer ${token}`,
+      //   },
+      //   body: formData,
+      // });
+
+
+      const response = await api.put(`/gallery/${selectedImage._id}`,{
+        headers:{
           Authorization: `Bearer ${token}`,
         },
-        body: formData,
-      });
+        body:formData,
+      })
 
       const data = await response.json();
 

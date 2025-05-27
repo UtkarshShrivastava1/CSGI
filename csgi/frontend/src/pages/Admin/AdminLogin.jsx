@@ -4,9 +4,18 @@ import React from 'react'
 import { Eye, EyeOff, LogIn, User, Lock } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import api from "../../../services/api";
 import axios from 'axios';
 
 function AdminLogin() {
+
+  const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    // behavior: "smooth",
+  });
+};
+  scrollToTop();
 
     const [username, setUsername] = useState(""); 
   const [password, setPassword] = useState("");
@@ -21,7 +30,12 @@ function AdminLogin() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/admin-login", {
+      // const response = await axios.post("http://localhost:5000/api/auth/admin-login", {
+      //   username,
+      //   password,
+      // });
+
+      const response = await api.post("/auth/admin-login", {
         username,
         password,
       });
