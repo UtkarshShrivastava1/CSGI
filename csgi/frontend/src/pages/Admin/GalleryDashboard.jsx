@@ -77,17 +77,27 @@ const GalleryDashboard = () => {
       }
 
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/gallery', {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      // const response = await fetch('http://localhost:5000/api/gallery', {
+      //   headers: {
+      //     Authorization: `Bearer ${token}`,
+      //   },
+      // });
+
+      const response = await api.get("/gallery",{
+        headers:{
+          Authorization: `Bearee ${token}`
         },
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch gallery images');
-      }
 
-      const data = await response.json();
+
+      // if (!response.ok) {
+      //   throw new Error('Failed to fetch gallery images');
+      // }
+
+      // const data = await response.json();
+
+      const data = await response.data;
 
       // Handle different response formats
       let imagesData = [];
@@ -110,14 +120,17 @@ const GalleryDashboard = () => {
             imageUrl = image.image.url;
           } else {
             // If URL is a path, prepend the server URL
-            imageUrl = `http://localhost:5000${image.image.url}`;
+            // imageUrl = `http://localhost:5000${image.image.url}`;
+            imageUrl = `${api}${image.image.url}`;
           }
         } else if (image.image && image.image.filename) {
           // If we have a filename, construct the URL
-          imageUrl = `http://localhost:5000/uploads/${image.image.filename}`;
+          // imageUrl = `http://localhost:5000/uploads/${image.image.filename}`;
+          imageUrl = `${api}${image.image.filename}`;
         } else if (image.image && image.image.path) {
           // If we have a path, construct the URL
-          imageUrl = `http://localhost:5000${image.image.path}`;
+          // imageUrl = `http://localhost:5000${image.image.path}`;
+          imageUrl = `${api}${image.image.path}`;
         }
 
         return {
